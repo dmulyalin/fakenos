@@ -1,0 +1,1687 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="FakeNOS, Network, SSH">
+      
+      
+        <meta name="author" content="Denis Mulyalin">
+      
+      
+        <link rel="canonical" href="https://fakenos.github.io/builtin_plugins_api_reference/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+    
+    
+      
+        <title>Built-in Plugins API - FakeNOS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.120efc48.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="teal">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#nos-plugins" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="FakeNOS" class="md-header__button md-logo" aria-label="FakeNOS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FakeNOS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Built-in Plugins API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmulyalin/fakenos" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dmulyalin/fakenos
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Overview
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../installation/" class="md-tabs__link">
+        Usage
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../plugins_overview/" class="md-tabs__link">
+        Plugins
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../core_api_reference/" class="md-tabs__link md-tabs__link--active">
+        API Reference
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="FakeNOS" class="md-nav__button md-logo" aria-label="FakeNOS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    FakeNOS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmulyalin/fakenos" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dmulyalin/fakenos
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Usage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Usage" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Usage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fakenos_inventory/" class="md-nav__link">
+        FakeNOS Inventory
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../running_in_docker_md/" class="md-nav__link">
+        Running in Docker Container
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Plugins
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Plugins" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Plugins
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugins_overview/" class="md-nav__link">
+        Plugins Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creating_nos_plugin/" class="md-nav__link">
+        Creating NOS Plugin
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          API Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="API Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          API Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core_api_reference/" class="md-nav__link">
+        Core API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Built-in Plugins API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Built-in Plugins API
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nos-plugins" class="md-nav__link">
+    NOS Plugins
+  </a>
+  
+    <nav class="md-nav" aria-label="NOS Plugins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cisco-ios" class="md-nav__link">
+    Cisco IOS
+  </a>
+  
+    <nav class="md-nav" aria-label="Cisco IOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fakenos.plugins.nos.cisco_ios.commands" class="md-nav__link">
+    commands
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakenos.plugins.nos.cisco_ios.initial_prompt" class="md-nav__link">
+    initial_prompt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakenos.plugins.nos.cisco_ios.running_configuration" class="md-nav__link">
+    running_configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakenos.plugins.nos.cisco_ios.show_version" class="md-nav__link">
+    show_version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakenos.plugins.nos.cisco_ios.make_show_clock" class="md-nav__link">
+    make_show_clock()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servers-plugins" class="md-nav__link">
+    Servers Plugins
+  </a>
+  
+    <nav class="md-nav" aria-label="Servers Plugins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fakenos.plugins.servers.ssh_server_paramiko.ParamikoSshServer.watchdog" class="md-nav__link">
+    watchdog()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell-plugins" class="md-nav__link">
+    Shell Plugins
+  </a>
+  
+    <nav class="md-nav" aria-label="Shell Plugins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fakenos.plugins.shell.cmd_shell.CMDShell._check_prompt" class="md-nav__link">
+    _check_prompt()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakenos.plugins.shell.cmd_shell.CMDShell.default" class="md-nav__link">
+    default()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakenos.plugins.shell.cmd_shell.CMDShell.do_help" class="md-nav__link">
+    do_help()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakenos.plugins.shell.cmd_shell.CMDShell.emptyline" class="md-nav__link">
+    emptyline()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tape-plugins" class="md-nav__link">
+    Tape Plugins
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fakenos-cli" class="md-nav__link">
+    FakeNOS CLI
+  </a>
+  
+    <nav class="md-nav" aria-label="FakeNOS CLI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fakenos.plugins.utils.cli.run_cli" class="md-nav__link">
+    run_cli()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nos-plugins" class="md-nav__link">
+    NOS Plugins
+  </a>
+  
+    <nav class="md-nav" aria-label="NOS Plugins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cisco-ios" class="md-nav__link">
+    Cisco IOS
+  </a>
+  
+    <nav class="md-nav" aria-label="Cisco IOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fakenos.plugins.nos.cisco_ios.commands" class="md-nav__link">
+    commands
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakenos.plugins.nos.cisco_ios.initial_prompt" class="md-nav__link">
+    initial_prompt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakenos.plugins.nos.cisco_ios.running_configuration" class="md-nav__link">
+    running_configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakenos.plugins.nos.cisco_ios.show_version" class="md-nav__link">
+    show_version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakenos.plugins.nos.cisco_ios.make_show_clock" class="md-nav__link">
+    make_show_clock()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servers-plugins" class="md-nav__link">
+    Servers Plugins
+  </a>
+  
+    <nav class="md-nav" aria-label="Servers Plugins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fakenos.plugins.servers.ssh_server_paramiko.ParamikoSshServer.watchdog" class="md-nav__link">
+    watchdog()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell-plugins" class="md-nav__link">
+    Shell Plugins
+  </a>
+  
+    <nav class="md-nav" aria-label="Shell Plugins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fakenos.plugins.shell.cmd_shell.CMDShell._check_prompt" class="md-nav__link">
+    _check_prompt()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakenos.plugins.shell.cmd_shell.CMDShell.default" class="md-nav__link">
+    default()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakenos.plugins.shell.cmd_shell.CMDShell.do_help" class="md-nav__link">
+    do_help()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakenos.plugins.shell.cmd_shell.CMDShell.emptyline" class="md-nav__link">
+    emptyline()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tape-plugins" class="md-nav__link">
+    Tape Plugins
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fakenos-cli" class="md-nav__link">
+    FakeNOS CLI
+  </a>
+  
+    <nav class="md-nav" aria-label="FakeNOS CLI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fakenos.plugins.utils.cli.run_cli" class="md-nav__link">
+    run_cli()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/dmulyalin/fakenos/edit/master/docs/builtin_plugins_api_reference.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+  <h1>Built-in Plugins API</h1>
+
+<h2 id="nos-plugins">NOS Plugins</h2>
+<h3 id="cisco-ios">Cisco IOS</h3>
+
+
+  <div class="doc doc-object doc-module">
+
+
+    <div class="doc doc-contents first">
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h4 class="doc doc-heading" id="fakenos.plugins.nos.cisco_ios.commands">
+<code class="highlight language-python"><span class="n">commands</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;enable&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;new_prompt&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{base_prompt}</span><span class="s1">#&#39;</span><span class="p">,</span> <span class="s1">&#39;help&#39;</span><span class="p">:</span> <span class="s1">&#39;enter exec prompt&#39;</span><span class="p">,</span> <span class="s1">&#39;prompt&#39;</span><span class="p">:</span> <span class="n">initial_prompt</span><span class="p">},</span> <span class="s1">&#39;show clock&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="n">make_show_clock</span><span class="p">,</span> <span class="s1">&#39;help&#39;</span><span class="p">:</span> <span class="s1">&#39;Display the system clock&#39;</span><span class="p">,</span> <span class="s1">&#39;prompt&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">initial_prompt</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{base_prompt}</span><span class="s1">#&#39;</span><span class="p">]},</span> <span class="s1">&#39;show running-config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="n">running_configuration</span><span class="p">,</span> <span class="s1">&#39;help&#39;</span><span class="p">:</span> <span class="s1">&#39;Current operating configuration&#39;</span><span class="p">,</span> <span class="s1">&#39;prompt&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{base_prompt}</span><span class="s1">#&#39;</span><span class="p">},</span> <span class="s1">&#39;show version&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="n">show_version</span><span class="p">,</span> <span class="s1">&#39;help&#39;</span><span class="p">:</span> <span class="s1">&#39;System hardware and software status&#39;</span><span class="p">,</span> <span class="s1">&#39;prompt&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{base_prompt}</span><span class="s1">#&#39;</span><span class="p">},</span> <span class="s1">&#39;_default_&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="s2">&quot;% Invalid input detected at &#39;^&#39; marker.&quot;</span><span class="p">,</span> <span class="s1">&#39;help&#39;</span><span class="p">:</span> <span class="s1">&#39;Output to print for unknown commands&#39;</span><span class="p">},</span> <span class="s1">&#39;terminal width 511&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;help&#39;</span><span class="p">:</span> <span class="s1">&#39;Set terminal width to 511&#39;</span><span class="p">},</span> <span class="s1">&#39;terminal length 0&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;help&#39;</span><span class="p">:</span> <span class="s1">&#39;Set terminal length to 0&#39;</span><span class="p">}}</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h4 class="doc doc-heading" id="fakenos.plugins.nos.cisco_ios.initial_prompt">
+<code class="highlight language-python"><span class="n">initial_prompt</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{base_prompt}</span><span class="s1">&gt;&#39;</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h4 class="doc doc-heading" id="fakenos.plugins.nos.cisco_ios.running_configuration">
+<code class="highlight language-python"><span class="n">running_configuration</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">service timestamps debug datetime msec</span><span class="se">\n</span><span class="s1">service timestamps log datetime msec</span><span class="se">\n</span><span class="s1">no service password-encryption</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">hostname IOL1</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">boot-start-marker</span><span class="se">\n</span><span class="s1">boot-end-marker</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">vrf definition MGMT</span><span class="se">\n</span><span class="s1"> rd 1:1</span><span class="se">\n</span><span class="s1"> !</span><span class="se">\n</span><span class="s1"> address-family ipv4</span><span class="se">\n</span><span class="s1"> exit-address-family</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">vrf definition abc-123</span><span class="se">\n</span><span class="s1"> rd 123:123</span><span class="se">\n</span><span class="s1"> !</span><span class="se">\n</span><span class="s1"> address-family ipv4</span><span class="se">\n</span><span class="s1"> exit-address-family</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">vrf definition def-456</span><span class="se">\n</span><span class="s1"> rd 456:456</span><span class="se">\n</span><span class="s1"> !</span><span class="se">\n</span><span class="s1"> address-family ipv4</span><span class="se">\n</span><span class="s1"> exit-address-family</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">aaa new-model</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">aaa authentication login default local</span><span class="se">\n</span><span class="s1">aaa authorization exec default local</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">aaa session-id common</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">clock timezone EET 2 0</span><span class="se">\n</span><span class="s1">mmi polling-interval 60</span><span class="se">\n</span><span class="s1">no mmi auto-configure</span><span class="se">\n</span><span class="s1">no mmi pvc</span><span class="se">\n</span><span class="s1">mmi snmp-timeout 180</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">no ip domain lookup</span><span class="se">\n</span><span class="s1">ip domain name lab.local</span><span class="se">\n</span><span class="s1">ip cef</span><span class="se">\n</span><span class="s1">no ipv6 cef</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">multilink bundle-name authenticated</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">archive</span><span class="se">\n</span><span class="s1"> path unix:BACKUP-</span><span class="se">\n</span><span class="s1"> write-memory</span><span class="se">\n</span><span class="s1">username cisco privilege 15 password 0 cisco</span><span class="se">\n</span><span class="s1">username nornir privilege 15 secret 5 $1$clqS$3CzLxkeHVJ9OYW83DOjuN/</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">redundancy</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">lldp run</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">interface Loopback0</span><span class="se">\n</span><span class="s1"> description Routing Loopback</span><span class="se">\n</span><span class="s1"> ip address 10.0.0.10 255.255.255.255</span><span class="se">\n</span><span class="s1"> ip ospf 1 area 0</span><span class="se">\n</span><span class="s1"> ipv6 address 2001::10/128</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">interface Loopback100</span><span class="se">\n</span><span class="s1"> ip address 1.1.1.100 255.255.255.255</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">interface Ethernet0/0</span><span class="se">\n</span><span class="s1"> description Main Interface for L3 features testing</span><span class="se">\n</span><span class="s1"> no ip address</span><span class="se">\n</span><span class="s1"> duplex auto</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">interface Ethernet0/0.102</span><span class="se">\n</span><span class="s1"> description to_vIOS1_Gi0/0.102</span><span class="se">\n</span><span class="s1"> encapsulation dot1Q 102</span><span class="se">\n</span><span class="s1"> ip address 10.1.102.10 255.255.255.0</span><span class="se">\n</span><span class="s1"> ipv6 address 2001:102::10/64</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">interface Ethernet0/0.107</span><span class="se">\n</span><span class="s1"> description to_IOL2_Eth0/0.107</span><span class="se">\n</span><span class="s1"> encapsulation dot1Q 107</span><span class="se">\n</span><span class="s1"> ip address 10.1.107.10 255.255.255.0</span><span class="se">\n</span><span class="s1"> ip ospf network point-to-point</span><span class="se">\n</span><span class="s1"> ip ospf 1 area 0</span><span class="se">\n</span><span class="s1"> ipv6 address 2001:107::10/64</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">interface Ethernet0/0.2000</span><span class="se">\n</span><span class="s1"> encapsulation dot1Q 2000</span><span class="se">\n</span><span class="s1"> vrf forwarding MGMT</span><span class="se">\n</span><span class="s1"> ip address 192.168.217.10 255.255.255.0</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">interface Ethernet0/1</span><span class="se">\n</span><span class="s1"> no ip address</span><span class="se">\n</span><span class="s1"> duplex auto</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">interface Ethernet0/2</span><span class="se">\n</span><span class="s1"> no ip address</span><span class="se">\n</span><span class="s1"> duplex auto</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">interface Ethernet0/3</span><span class="se">\n</span><span class="s1"> no ip address</span><span class="se">\n</span><span class="s1"> shutdown</span><span class="se">\n</span><span class="s1"> duplex auto</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">router ospf 1</span><span class="se">\n</span><span class="s1"> router-id 10.0.0.10</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">router bgp 100</span><span class="se">\n</span><span class="s1"> template peer-policy RR</span><span class="se">\n</span><span class="s1">  route-map rpl_in in</span><span class="se">\n</span><span class="s1">  route-map rpl_out out</span><span class="se">\n</span><span class="s1">  route-reflector-client</span><span class="se">\n</span><span class="s1">  next-hop-self</span><span class="se">\n</span><span class="s1">  maximum-prefix 1000 80</span><span class="se">\n</span><span class="s1">  send-community both</span><span class="se">\n</span><span class="s1"> exit-peer-policy</span><span class="se">\n</span><span class="s1"> !</span><span class="se">\n</span><span class="s1"> template peer-session RR</span><span class="se">\n</span><span class="s1">  remote-as 100</span><span class="se">\n</span><span class="s1">  update-source Loopback0</span><span class="se">\n</span><span class="s1"> exit-peer-session</span><span class="se">\n</span><span class="s1"> !</span><span class="se">\n</span><span class="s1"> bgp log-neighbor-changes</span><span class="se">\n</span><span class="s1"> neighbor peer_grpoup_a peer-group</span><span class="se">\n</span><span class="s1"> neighbor peer_grpoup_a remote-as 118</span><span class="se">\n</span><span class="s1"> neighbor peer_grpoup_a update-source Loopback0</span><span class="se">\n</span><span class="s1"> neighbor 10.0.0.4 inherit peer-session RR</span><span class="se">\n</span><span class="s1"> neighbor 10.0.0.8 inherit peer-session RR</span><span class="se">\n</span><span class="s1"> neighbor 10.1.48.4 peer-group peer_grpoup_a</span><span class="se">\n</span><span class="s1"> neighbor 10.1.48.4 description some peer description</span><span class="se">\n</span><span class="s1"> !</span><span class="se">\n</span><span class="s1"> address-family ipv4</span><span class="se">\n</span><span class="s1">  neighbor peer_grpoup_a send-community both</span><span class="se">\n</span><span class="s1">  neighbor peer_grpoup_a next-hop-self</span><span class="se">\n</span><span class="s1">  neighbor peer_grpoup_a route-map route-map-in in</span><span class="se">\n</span><span class="s1">  neighbor peer_grpoup_a route-map route-map-out out</span><span class="se">\n</span><span class="s1">  neighbor 10.0.0.4 activate</span><span class="se">\n</span><span class="s1">  neighbor 10.0.0.4 send-community extended</span><span class="se">\n</span><span class="s1">  neighbor 10.0.0.4 inherit peer-policy RR</span><span class="se">\n</span><span class="s1">  neighbor 10.0.0.8 activate</span><span class="se">\n</span><span class="s1">  neighbor 10.0.0.8 send-community extended</span><span class="se">\n</span><span class="s1">  neighbor 10.0.0.8 inherit peer-policy RR</span><span class="se">\n</span><span class="s1">  neighbor 10.1.48.4 activate</span><span class="se">\n</span><span class="s1"> exit-address-family</span><span class="se">\n</span><span class="s1"> !</span><span class="se">\n</span><span class="s1"> address-family vpnv4</span><span class="se">\n</span><span class="s1">  neighbor peer_grpoup_a send-community both</span><span class="se">\n</span><span class="s1">  neighbor peer_grpoup_a maximum-prefix 1000 80</span><span class="se">\n</span><span class="s1">  neighbor 10.0.0.4 activate</span><span class="se">\n</span><span class="s1">  neighbor 10.0.0.4 send-community extended</span><span class="se">\n</span><span class="s1">  neighbor 10.0.0.4 inherit peer-policy RR</span><span class="se">\n</span><span class="s1">  neighbor 10.0.0.8 activate</span><span class="se">\n</span><span class="s1">  neighbor 10.0.0.8 send-community extended</span><span class="se">\n</span><span class="s1">  neighbor 10.0.0.8 inherit peer-policy RR</span><span class="se">\n</span><span class="s1">  neighbor 10.1.48.4 activate</span><span class="se">\n</span><span class="s1"> exit-address-family</span><span class="se">\n</span><span class="s1"> !</span><span class="se">\n</span><span class="s1"> address-family ipv4 vrf abc-123</span><span class="se">\n</span><span class="s1">  neighbor 123.1.1.1 remote-as 321</span><span class="se">\n</span><span class="s1">  neighbor 123.1.1.1 activate</span><span class="se">\n</span><span class="s1">  neighbor 123.1.2.2 remote-as 321</span><span class="se">\n</span><span class="s1">  neighbor 123.1.2.2 activate</span><span class="se">\n</span><span class="s1"> exit-address-family</span><span class="se">\n</span><span class="s1"> !</span><span class="se">\n</span><span class="s1"> address-family ipv4 vrf def-456</span><span class="se">\n</span><span class="s1">  neighbor 251.1.1.5 remote-as 456</span><span class="se">\n</span><span class="s1">  neighbor 251.1.1.5 activate</span><span class="se">\n</span><span class="s1">  neighbor 251.6.1.6 remote-as 456</span><span class="se">\n</span><span class="s1">  neighbor 251.6.1.6 activate</span><span class="se">\n</span><span class="s1"> exit-address-family</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">ip forward-protocol nd</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">no ip http server</span><span class="se">\n</span><span class="s1">no ip http secure-server</span><span class="se">\n</span><span class="s1">ip route vrf MGMT 0.0.0.0 0.0.0.0 192.168.217.1 name inband_management</span><span class="se">\n</span><span class="s1">ip scp server enable</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">logging host 1.1.1.1</span><span class="se">\n</span><span class="s1">logging host 4.4.4.4</span><span class="se">\n</span><span class="s1">logging host 1.1.1.2</span><span class="se">\n</span><span class="s1">logging host 2.2.2.2</span><span class="se">\n</span><span class="s1">ipv6 ioam timestamp</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">control-plane</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n\n</span><span class="s1">line con 0</span><span class="se">\n</span><span class="s1"> logging synchronous</span><span class="se">\n</span><span class="s1">line aux 0</span><span class="se">\n</span><span class="s1">line vty 0 4</span><span class="se">\n</span><span class="s1"> transport input telnet ssh</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">ntp server 8.8.8.8</span><span class="se">\n</span><span class="s1">ntp server 7.7.7.8</span><span class="se">\n</span><span class="s1">ntp server 1.1.1.2</span><span class="se">\n</span><span class="s1">ntp server 3.3.3.3</span><span class="se">\n</span><span class="s1">ntp server 7.7.7.7</span><span class="se">\n</span><span class="s1">!</span><span class="se">\n</span><span class="s1">end</span><span class="se">\n</span><span class="s1">&#39;</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h4 class="doc doc-heading" id="fakenos.plugins.nos.cisco_ios.show_version">
+<code class="highlight language-python"><span class="n">show_version</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Cisco IOS XE Software, Version 17.03.01a</span><span class="se">\n</span><span class="s1">Cisco IOS Software [Amsterdam], Virtual XE Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version 17.3.1a, RELEASE SOFTWARE (fc3)</span><span class="se">\n</span><span class="s1">Technical Support: http://www.cisco.com/techsupport</span><span class="se">\n</span><span class="s1">Copyright (c) 1986-2020 by Cisco Systems, Inc.</span><span class="se">\n</span><span class="s1">Compiled Wed 12-Aug-20 00:16 by mcpre</span><span class="se">\n\n\n</span><span class="s1">Cisco IOS-XE software, Copyright (c) 2005-2020 by cisco Systems, Inc.</span><span class="se">\n</span><span class="s1">All rights reserved.  Certain components of Cisco IOS-XE software are</span><span class="se">\n</span><span class="s1">licensed under the GNU General Public License (&quot;GPL&quot;) Version 2.0.  The</span><span class="se">\n</span><span class="s1">software code licensed under GPL Version 2.0 is free software that comes</span><span class="se">\n</span><span class="s1">with ABSOLUTELY NO WARRANTY.  You can redistribute and/or modify such</span><span class="se">\n</span><span class="s1">GPL code under the terms of GPL Version 2.0.  For more details, see the</span><span class="se">\n</span><span class="s1">documentation or &quot;License Notice&quot; file accompanying the IOS-XE software,</span><span class="se">\n</span><span class="s1">or the applicable URL provided on the flyer accompanying the IOS-XE</span><span class="se">\n</span><span class="s1">software.</span><span class="se">\n\n\n</span><span class="s1">ROM: IOS-XE ROMMON</span><span class="se">\n</span><span class="s1">csr1000v-1 uptime is 1 day, 17 hours, 32 minutes</span><span class="se">\n</span><span class="s1">Uptime for this control processor is 1 day, 17 hours, 33 minutes</span><span class="se">\n</span><span class="s1">System returned to ROM by reload</span><span class="se">\n</span><span class="s1">System image file is &quot;bootflash:packages.conf&quot;</span><span class="se">\n</span><span class="s1">Last reload reason: reload</span><span class="se">\n\n\n\n</span><span class="s1">This product contains cryptographic features and is subject to United</span><span class="se">\n</span><span class="s1">States and local country laws governing import, export, transfer and</span><span class="se">\n</span><span class="s1">use. Delivery of Cisco cryptographic products does not imply</span><span class="se">\n</span><span class="s1">third-party authority to import, export, distribute or use encryption.</span><span class="se">\n</span><span class="s1">Importers, exporters, distributors and users are responsible for</span><span class="se">\n</span><span class="s1">compliance with U.S. and local country laws. By using this product you</span><span class="se">\n</span><span class="s1">agree to comply with applicable laws and regulations. If you are unable</span><span class="se">\n</span><span class="s1">to comply with U.S. and local laws, return this product immediately.</span><span class="se">\n\n</span><span class="s1">A summary of U.S. laws governing Cisco cryptographic products may be found at:</span><span class="se">\n</span><span class="s1">http://www.cisco.com/wwl/export/crypto/tool/stqrg.html</span><span class="se">\n\n</span><span class="s1">If you require further assistance please contact us by sending email to</span><span class="se">\n</span><span class="s1">export@cisco.com.</span><span class="se">\n\n</span><span class="s1">License Level: ax</span><span class="se">\n</span><span class="s1">License Type: N/A(Smart License Enabled)</span><span class="se">\n</span><span class="s1">Next reload license Level: ax</span><span class="se">\n\n</span><span class="s1">The current throughput level is 1000 kbps</span><span class="se">\n\n\n</span><span class="s1">Smart Licensing Status: UNREGISTERED/No Licenses in Use</span><span class="se">\n\n</span><span class="s1">cisco CSR1000V (VXE) processor (revision VXE) with 715705K/3075K bytes of memory.</span><span class="se">\n</span><span class="s1">Processor board ID 9ESGOBARV9D</span><span class="se">\n</span><span class="s1">Router operating mode: Autonomous</span><span class="se">\n</span><span class="s1">3 Gigabit Ethernet interfaces</span><span class="se">\n</span><span class="s1">32768K bytes of non-volatile configuration memory.</span><span class="se">\n</span><span class="s1">3978420K bytes of physical memory.</span><span class="se">\n</span><span class="s1">6188032K bytes of virtual hard disk at bootflash:.</span><span class="se">\n\n</span><span class="s1">Configuration register is 0x2102</span><span class="se">\n</span><span class="s1">&#39;</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+    </div>
+
+  </div>
+
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h4 class="doc doc-heading" id="fakenos.plugins.nos.cisco_ios.make_show_clock">
+<code class="highlight language-python"><span class="n">make_show_clock</span><span class="p">(</span><span class="n">base_prompt</span><span class="p">,</span> <span class="n">current_prompt</span><span class="p">,</span> <span class="n">command</span><span class="p">)</span></code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Return String in format '*11:54:03.018 UTC Sat Apr 16 2022'</p>
+
+        <details class="quote">
+          <summary>Source code in <code>fakenos\plugins\nos\cisco_ios.py</code></summary>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">make_show_clock</span><span class="p">(</span><span class="n">base_prompt</span><span class="p">,</span> <span class="n">current_prompt</span><span class="p">,</span> <span class="n">command</span><span class="p">):</span>
+    <span class="s2">&quot;Return String in format &#39;*11:54:03.018 UTC Sat Apr 16 2022&#39;&quot;</span>
+    <span class="k">return</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;*%H:%M:%S.000 %Z </span><span class="si">%a</span><span class="s2"> %b </span><span class="si">%d</span><span class="s2"> %Y&quot;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+<h2 id="servers-plugins">Servers Plugins</h2>
+
+
+  <div class="doc doc-object doc-class">
+
+
+    <div class="doc doc-contents first">
+        <p class="doc doc-class-bases">
+          Bases: <code><span title="fakenos.core.servers.TCPServerBase">TCPServerBase</span></code></p>
+
+
+
+
+            <details class="quote">
+              <summary>Source code in <code>fakenos\plugins\servers\ssh_server_paramiko.py</code></summary>
+              <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">shell</span><span class="p">,</span>
+    <span class="n">nos</span><span class="p">,</span>
+    <span class="n">port</span><span class="p">,</span>
+    <span class="n">username</span><span class="p">,</span>
+    <span class="n">password</span><span class="p">,</span>
+    <span class="n">ssh_key_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">ssh_key_file_password</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">ssh_banner</span><span class="o">=</span><span class="s2">&quot;My SSH Server&quot;</span><span class="p">,</span>
+    <span class="n">shell_configuration</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">address</span><span class="o">=</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+    <span class="n">timeout</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">watchdog_interval</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="nb">super</span><span class="p">(</span><span class="n">ParamikoSshServer</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">nos</span> <span class="o">=</span> <span class="n">nos</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">shell</span> <span class="o">=</span> <span class="n">shell</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">shell_configuration</span> <span class="o">=</span> <span class="n">shell_configuration</span> <span class="ow">or</span> <span class="p">{}</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ssh_banner</span> <span class="o">=</span> <span class="n">ssh_banner</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">username</span> <span class="o">=</span> <span class="n">username</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span> <span class="n">password</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="n">port</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">address</span> <span class="o">=</span> <span class="n">address</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span> <span class="o">=</span> <span class="n">timeout</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">watchdog_interval</span> <span class="o">=</span> <span class="n">watchdog_interval</span>
+
+    <span class="k">if</span> <span class="n">ssh_key_file</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ssh_server_key</span> <span class="o">=</span> <span class="n">paramiko</span><span class="o">.</span><span class="n">RSAKey</span><span class="o">.</span><span class="n">from_private_key_file</span><span class="p">(</span>
+            <span class="n">ssh_key_file</span><span class="p">,</span> <span class="n">ssh_key_file_password</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ssh_server_key</span> <span class="o">=</span> <span class="n">paramiko</span><span class="o">.</span><span class="n">RSAKey</span><span class="p">(</span>
+            <span class="n">file_obj</span><span class="o">=</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">DEFAULT_SSH_KEY</span><span class="p">)</span>
+        <span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+            </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 class="doc doc-heading" id="fakenos.plugins.servers.ssh_server_paramiko.ParamikoSshServer.watchdog">
+<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">plugins</span><span class="o">.</span><span class="n">servers</span><span class="o">.</span><span class="n">ssh_server_paramiko</span><span class="o">.</span><span class="n">ParamikoSshServer</span><span class="o">.</span><span class="n">watchdog</span><span class="p">(</span><span class="n">run_srv</span><span class="p">,</span> <span class="n">session</span><span class="p">,</span> <span class="n">shell</span><span class="p">)</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Method to monitor server liveness and recover where possible.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>fakenos\plugins\servers\ssh_server_paramiko.py</code></summary>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">watchdog</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">run_srv</span><span class="p">,</span> <span class="n">session</span><span class="p">,</span> <span class="n">shell</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Method to monitor server liveness and recover where possible.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">while</span> <span class="n">run_srv</span><span class="o">.</span><span class="n">is_set</span><span class="p">():</span>
+        <span class="c1"># check if session is alive, stop shell if it is not</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">session</span><span class="o">.</span><span class="n">is_alive</span><span class="p">():</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="s2">&quot;ParamikoSshServer.watchdog - session not alive, stopping shell&quot;</span>
+            <span class="p">)</span>
+            <span class="n">shell</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+            <span class="k">break</span>
+
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">watchdog_interval</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+<h2 id="shell-plugins">Shell Plugins</h2>
+
+
+  <div class="doc doc-object doc-class">
+
+
+    <div class="doc doc-contents first">
+        <p class="doc doc-class-bases">
+          Bases: <code><span title="cmd.Cmd">Cmd</span></code></p>
+
+
+      
+
+
+            <details class="quote">
+              <summary>Source code in <code>fakenos\plugins\shell\cmd_shell.py</code></summary>
+              <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">stdin</span><span class="p">,</span>
+    <span class="n">stdout</span><span class="p">,</span>
+    <span class="n">nos</span><span class="p">,</span>
+    <span class="n">base_prompt</span><span class="p">,</span>
+    <span class="n">is_running</span><span class="p">,</span>
+    <span class="n">intro</span><span class="o">=</span><span class="s2">&quot;Custom SSH Shell&quot;</span><span class="p">,</span>
+    <span class="n">ruler</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="n">completekey</span><span class="o">=</span><span class="s2">&quot;tab&quot;</span><span class="p">,</span>
+    <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">nos</span> <span class="o">=</span> <span class="n">nos</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ruler</span> <span class="o">=</span> <span class="n">ruler</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">intro</span> <span class="o">=</span> <span class="n">intro</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">base_prompt</span> <span class="o">=</span> <span class="n">base_prompt</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">commands</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">nos</span><span class="o">.</span><span class="n">commands</span> <span class="ow">or</span> <span class="p">{})</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">newline</span> <span class="o">=</span> <span class="n">newline</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">prompt</span> <span class="o">=</span> <span class="n">nos</span><span class="o">.</span><span class="n">initial_prompt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">base_prompt</span><span class="o">=</span><span class="n">base_prompt</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">is_running</span> <span class="o">=</span> <span class="n">is_running</span>
+
+    <span class="c1"># call the base constructor of cmd.Cmd, with our own stdin and stdout</span>
+    <span class="nb">super</span><span class="p">(</span><span class="n">CMDShell</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="n">completekey</span><span class="o">=</span><span class="n">completekey</span><span class="p">,</span>
+        <span class="n">stdin</span><span class="o">=</span><span class="n">stdin</span><span class="p">,</span>
+        <span class="n">stdout</span><span class="o">=</span><span class="n">stdout</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+            </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 class="doc doc-heading" id="fakenos.plugins.shell.cmd_shell.CMDShell._check_prompt">
+<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">plugins</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">cmd_shell</span><span class="o">.</span><span class="n">CMDShell</span><span class="o">.</span><span class="n">_check_prompt</span><span class="p">(</span><span class="n">prompt_</span><span class="p">)</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Helper method to check if prompt_ matches current prompt</p>
+
+  <p>Parameters:</p>
+  <ul>
+      <li class="field-body">
+        <b>prompt_</b>
+        – <p>(string or None)  prompt to check</p>
+      </li>
+  </ul>
+
+        <details class="quote">
+          <summary>Source code in <code>fakenos\plugins\shell\cmd_shell.py</code></summary>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">_check_prompt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt_</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Helper method to check if prompt_ matches current prompt</span>
+
+<span class="sd">    :param prompt_: (string or None)  prompt to check</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># prompt_ is None if no &#39;prompt&#39; key defined for command</span>
+    <span class="k">if</span> <span class="n">prompt_</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">prompt_</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">prompt</span> <span class="o">==</span> <span class="n">prompt_</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">base_prompt</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">base_prompt</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">prompt_</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">any</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">prompt</span> <span class="o">==</span> <span class="n">i</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">base_prompt</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">base_prompt</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">prompt_</span>
+        <span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 class="doc doc-heading" id="fakenos.plugins.shell.cmd_shell.CMDShell.default">
+<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">plugins</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">cmd_shell</span><span class="o">.</span><span class="n">CMDShell</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="n">command</span><span class="p">)</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Method called if no do_xyz methods found </p>
+
+        <details class="quote">
+          <summary>Source code in <code>fakenos\plugins\shell\cmd_shell.py</code></summary>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Method called if no do_xyz methods found &quot;&quot;&quot;</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;shell.run_command running command &#39;</span><span class="si">{}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">command</span><span class="p">))</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">commands</span><span class="p">[</span><span class="s2">&quot;_default_&quot;</span><span class="p">][</span><span class="s2">&quot;output&quot;</span><span class="p">]</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">cmd_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">commands</span><span class="p">[</span><span class="n">command</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_prompt</span><span class="p">(</span><span class="n">cmd_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;prompt&quot;</span><span class="p">)):</span>
+            <span class="n">ret</span> <span class="o">=</span> <span class="n">cmd_data</span><span class="p">[</span><span class="s2">&quot;output&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">ret</span><span class="p">):</span>
+                <span class="n">ret</span> <span class="o">=</span> <span class="n">ret</span><span class="p">(</span>
+                    <span class="n">base_prompt</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">base_prompt</span><span class="p">,</span>
+                    <span class="n">current_prompt</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">prompt</span><span class="p">,</span>
+                    <span class="n">command</span><span class="o">=</span><span class="n">command</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="s2">&quot;new_prompt&quot;</span> <span class="ow">in</span> <span class="n">cmd_data</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">prompt</span> <span class="o">=</span> <span class="n">cmd_data</span><span class="p">[</span><span class="s2">&quot;new_prompt&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">base_prompt</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">base_prompt</span>
+                <span class="p">)</span>
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">()</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">newline</span><span class="p">)</span>
+
+    <span class="c1"># returning True will close the shell</span>
+    <span class="k">if</span> <span class="n">ret</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="c1"># if not None, write output to stdout</span>
+    <span class="k">elif</span> <span class="n">ret</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</code></pre></div>
+</td></tr></table>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 class="doc doc-heading" id="fakenos.plugins.shell.cmd_shell.CMDShell.do_help">
+<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">plugins</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">cmd_shell</span><span class="o">.</span><span class="n">CMDShell</span><span class="o">.</span><span class="n">do_help</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Method to return help for commands</p>
+
+        <details class="quote">
+          <summary>Source code in <code>fakenos\plugins\shell\cmd_shell.py</code></summary>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">do_help</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Method to return help for commands&quot;&quot;&quot;</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># dict of {cmd: cmd_help}</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># record longest command width for padding</span>
+    <span class="n">cmd_string</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    <span class="c1"># form help for all commands</span>
+    <span class="k">for</span> <span class="n">cmd</span><span class="p">,</span> <span class="n">cmd_data</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">commands</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="c1"># skip special commands</span>
+        <span class="k">if</span> <span class="n">cmd</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">cmd</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="c1"># skip commands that does not match current prompt</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_prompt</span><span class="p">(</span><span class="n">cmd_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;prompt&quot;</span><span class="p">)):</span>
+            <span class="k">continue</span>
+        <span class="n">lines</span><span class="p">[</span><span class="n">cmd</span><span class="p">]</span> <span class="o">=</span> <span class="n">cmd_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;help&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cmd</span><span class="p">))</span>
+    <span class="c1"># form help lines</span>
+    <span class="n">help_msg</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">lines</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">padding</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">k</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;  &quot;</span>
+        <span class="n">help_msg</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">k</span><span class="si">}{</span><span class="n">padding</span><span class="si">}{</span><span class="n">v</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">writeline</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">newline</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">help_msg</span><span class="p">))</span>
+</code></pre></div>
+</td></tr></table>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 class="doc doc-heading" id="fakenos.plugins.shell.cmd_shell.CMDShell.emptyline">
+<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">plugins</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">cmd_shell</span><span class="o">.</span><span class="n">CMDShell</span><span class="o">.</span><span class="n">emptyline</span><span class="p">()</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>This method to do nothing if empty line entered </p>
+
+        <details class="quote">
+          <summary>Source code in <code>fakenos\plugins\shell\cmd_shell.py</code></summary>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">emptyline</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; This method to do nothing if empty line entered &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+</code></pre></div>
+</td></tr></table>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+<h2 id="tape-plugins">Tape Plugins</h2>
+<p>Nill</p>
+<h2 id="fakenos-cli">FakeNOS CLI</h2>
+
+
+  <div class="doc doc-object doc-module">
+
+
+    <div class="doc doc-contents first">
+
+      <p>FakeNOS Command Line Tool for running fake servers.</p>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 class="doc doc-heading" id="fakenos.plugins.utils.cli.run_cli">
+<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">plugins</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">cli</span><span class="o">.</span><span class="n">run_cli</span><span class="p">()</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Function to start FakeNOS CLI </p>
+
+        <details class="quote">
+          <summary>Source code in <code>fakenos\plugins\utils\cli.py</code></summary>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">run_cli</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Function to start FakeNOS CLI &quot;&quot;&quot;</span>
+    <span class="n">net</span> <span class="o">=</span> <span class="n">FakeNOS</span><span class="p">(</span><span class="n">inventory</span><span class="o">=</span><span class="n">INVENTORY</span><span class="p">)</span>
+    <span class="n">net</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Started servers:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">list_hosts</span><span class="p">())</span>
+</code></pre></div>
+</td></tr></table>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../core_api_reference/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Core API" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Core API
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      
+    
+  </body>
+</html>
