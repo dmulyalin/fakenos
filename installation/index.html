@@ -70,6 +70,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#from-pypi-using-pip" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -331,6 +336,8 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         Installation
@@ -530,6 +537,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -547,9 +556,27 @@
 
 
 
-  <h1>Installation</h1>
-
-
+<h1 id="from-pypi-using-pip">From PyPI using PIP<a class="headerlink" href="#from-pypi-using-pip" title="Permanent link">&para;</a></h1>
+<p>FakeNOS published to PyPI, to install it using PIP run:</p>
+<p><code>python3 -m pip install fakenos</code></p>
+<h1 id="from-github-master-branch">From GitHub master branch<a class="headerlink" href="#from-github-master-branch" title="Permanent link">&para;</a></h1>
+<p>Install <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">GIT</a>, next
+install from GitHub master branch:</p>
+<p><code>python3 -m pip install git+https://github.com/dmulyalin/fakenos</code></p>
+<h1 id="using-poetry">Using Poetry<a class="headerlink" href="#using-poetry" title="Permanent link">&para;</a></h1>
+<p>FakeNOS uses Python <a href="https://python-poetry.org/">Poetry</a> to manage dependencies and 
+virtual environments. Follow steps below to install FakeNOS using Poetry:</p>
+<div class="annotate highlight"><pre><span></span><code>python3 -m pip install poetry <span class="c1"># (1)</span>
+git clone https://github.com/dmulyalin/fakenos <span class="c1"># (2)</span>
+<span class="nb">cd</span> fakenos <span class="c1"># (3)</span>
+poetry install <span class="c1"># (4)</span>
+</code></pre></div>
+<ol>
+<li>Install Poetry</li>
+<li>Clone FakeNOS repository from GitHub master branch</li>
+<li>Navigate to fakenos folder</li>
+<li>Run poetry to create virtual environment and install dependencies</li>
+</ol>
 
               
             </article>
@@ -615,7 +642,7 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "content.tabs.link"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.6e54b5cd.min.js"></script>

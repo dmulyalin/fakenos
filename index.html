@@ -321,41 +321,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#basic-usage" class="md-nav__link">
-    Basic Usage
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-inventory" class="md-nav__link">
-    Using Inventory
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fakenos-docker-container" class="md-nav__link">
-    FakeNOS Docker Container
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-generate-ssh-private-key" class="md-nav__link">
-    How to Generate SSH private key
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#fakenos-inspired-by-and-borrowed-from" class="md-nav__link">
     FakeNOS inspired by and borrowed from
   </a>
@@ -611,41 +576,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#basic-usage" class="md-nav__link">
-    Basic Usage
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-inventory" class="md-nav__link">
-    Using Inventory
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fakenos-docker-container" class="md-nav__link">
-    FakeNOS Docker Container
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-generate-ssh-private-key" class="md-nav__link">
-    How to Generate SSH private key
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#fakenos-inspired-by-and-borrowed-from" class="md-nav__link">
     FakeNOS inspired by and borrowed from
   </a>
@@ -670,96 +600,14 @@
 
 
 
-<h1 id="fake-network-operating-systems-fakenos">Fake Network Operating Systems - FakeNOS</h1>
+<h1 id="fake-network-operating-systems-fakenos">Fake Network Operating Systems - FakeNOS<a class="headerlink" href="#fake-network-operating-systems-fakenos" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p>"Reality is merely an illusion, albeit a very persistent one."</p>
 <p>~ Albert Einstein</p>
 </blockquote>
 <p>FakeNOS created to simulate Network Operating Systems interactions.</p>
-<h2 id="installation">Installation</h2>
-<p>Install <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">GIT</a>, next
-install from master:</p>
-<p><code>python3 -m pip install git+https://github.com/dmulyalin/fakenos</code></p>
-<h2 id="basic-usage">Basic Usage</h2>
-<p>This code starts two devices listening for SSH connections on 127.0.0.1 address
-ports 6001 and 6002 named <code>router1</code> and <code>router2</code> respectively:</p>
-<pre><code>from fakenos import FakeNOS
-
-network = FakeNOS()
-network.start()
-</code></pre>
-<p>Initiate SSH connection using default username <code>user</code> and password <code>user</code>:</p>
-<pre><code>ssh 127.0.0.1 -l user -p 6001
-</code></pre>
-<h2 id="using-inventory">Using Inventory</h2>
-<p>FakeNOS uses Inventory dictionary to define a set of SSH servers to start.</p>
-<p>Sample inventory data and code to start the servers:</p>
-<pre><code>from fakenos import FakeNOS
-
-fake_network = {
-    &quot;default&quot;: {
-        &quot;username&quot;: &quot;user&quot;,
-        &quot;password&quot;: &quot;user&quot;,
-        &quot;port&quot;: [5000, 6000],
-        &quot;server&quot;: {
-            &quot;plugin&quot;: &quot;ParamikoSshServer&quot;,
-            &quot;configuration&quot;: {
-                &quot;ssh_key_file&quot;: &quot;./ssh-keys/ssh_host_rsa_key&quot;,
-                &quot;timeout&quot;: 1,
-                &quot;address&quot;: &quot;127.0.0.1&quot;,
-            },
-        },
-        &quot;shell&quot;: {&quot;plugin&quot;: &quot;CMDShell&quot;, &quot;configuration&quot;: {}},
-        &quot;nos&quot;: {&quot;plugin&quot;: &quot;cisco_ios&quot;, &quot;configuration&quot;: {}},
-    },
-    &quot;hosts&quot;: {
-        &quot;R1&quot;: {
-            &quot;port&quot;: 5001,
-            &quot;username&quot;: &quot;fakenos&quot;,
-            &quot;password&quot;: &quot;fakenos&quot;,
-            &quot;server&quot;: {
-                &quot;plugin&quot;: &quot;ParamikoSshServer&quot;,
-                &quot;configuration&quot;: {&quot;address&quot;: &quot;0.0.0.0&quot;},
-            },
-            &quot;shell&quot;: {
-                &quot;plugin&quot;: &quot;CMDShell&quot;,
-                &quot;configuration&quot;: {&quot;intro&quot;: &quot;Custom SSH Shell&quot;},
-            },
-        },
-        &quot;R2&quot;: {},
-        &quot;core-router&quot;: {&quot;count&quot;: 2, &quot;port&quot;: [5000, 6000]},
-    },
-}
-
-network = FakeNOS(inventory=fake_network)
-network.starts()
-
-print(network.list_hosts())
-</code></pre>
-<h2 id="fakenos-docker-container">FakeNOS Docker Container</h2>
-<p>FakeNOS GitHub repository contains <code>docker-compose</code> and <code>Docker</code> files to build
-and start FakeNOS in a container. To use it, providing that GIT, Docker and
-Docker-Compose installed on the system:</p>
-<ol>
-<li>Clone FakeNOS repository: <code>git clone https://github.com/dmulyalin/fakenos.git</code></li>
-<li>Build container: <code>docker-compose up</code></li>
-<li>Access FakeNOS router: <code>ssh 10.100.0.2 -l user -p 6001</code></li>
-</ol>
-<h2 id="how-to-generate-ssh-private-key">How to Generate SSH private key</h2>
-<p>By default FakeNOS uses SSH private key embedded with the package, making that key
-publicly available, which is insecure. Instead, FakeNOS can use locally generated SSH key.</p>
-<p><strong>Linux</strong></p>
-<p>Use the command <code>ssh-keygen -A</code> in terminal to generate all of your SSH keys. Once the command is run,
-you can find the RSA key in the following location: <code>~/.ssh/id_rsa</code> a.k.a. <code>/home/username/.ssh/id_rsa</code>.
-Supply above path as <code>ssh_key_file</code> argument to FakeNOS server configuration.</p>
-<p>Alternatively can use <code>ckeygen -t rsa -f ssh-keys/ssh_host_rsa_key</code> command to generate private key.</p>
-<p><strong>Windows 10</strong></p>
-<p>Press Windows Key, type <code>Manage Optional Features</code>. If OpenSSH Client &amp; Server is in the list, you're all set.
-If either is not, click on "Add a feature" and search for <code>OpenSSH</code>, click on them to install.
-Next, open cmd as administrator. Enter the command <code>ssh-keygen</code> and follow the on screen prompts.
-The location of the key will be displayed. Supply displayed path as <code>ssh_key_file</code> argument to FakeNOS
-server configuration. If you put a password, include it as the <code>ssh_key_file_password</code> parameter.</p>
-<h2 id="fakenos-inspired-by-and-borrowed-from">FakeNOS inspired by and borrowed from</h2>
+<p><a href="https://dmulyalin.github.io/fakenos/">Documentation</a></p>
+<h2 id="fakenos-inspired-by-and-borrowed-from">FakeNOS inspired by and borrowed from<a class="headerlink" href="#fakenos-inspired-by-and-borrowed-from" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://pythonhosted.org/sshim/">sshim</a> - library for testing and debugging SSH automation clients</li>
 <li><a href="https://github.com/ramonmeza/PythonSSHServerTutorial">PythonSSHServerTutorial</a> - tutorial on creating paramiko based SSH server</li>
@@ -818,7 +666,7 @@ server configuration. If you put a password, include it as the <code>ssh_key_fil
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs"], "search": "assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "content.tabs.link"], "search": "assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
       <script src="assets/javascripts/bundle.6e54b5cd.min.js"></script>

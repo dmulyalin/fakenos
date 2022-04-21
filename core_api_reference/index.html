@@ -912,7 +912,7 @@
 
   <h1>Core API</h1>
 
-<h2 id="fakenos-core-class">FakeNOS Core Class</h2>
+<h2 id="fakenos-core-class">FakeNOS Core Class<a class="headerlink" href="#fakenos-core-class" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-object doc-class">
@@ -921,8 +921,7 @@
     <div class="doc doc-contents first">
 
 
-      <p>FakeNOS core class is a main entry point to interact with fake NOS
-servers - start, stop, list.</p>
+      <p>FakeNOS class is a main entry point to interact with fake NOS servers - start, stop, list.</p>
 
   <p>Parameters:</p>
   <ul>
@@ -934,25 +933,25 @@ servers - start, stop, list.</p>
       <li class="field-body">
         <b>log_level</b>
             (<code>str</code>)
-        – <p>logging level to use</p>
+        – <p>logging level to use      Sample usage:  <code>python from fakenos import FakeNOS  net = FakeNOS() net.start()</code></p>
       </li>
   </ul>
 
 
             <details class="quote">
               <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-              <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
+              <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">57</span>
 <span class="normal">58</span>
 <span class="normal">59</span>
-<span class="normal">60</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inventory</span><span class="p">:</span> <span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">log_level</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;DEBUG&quot;</span><span class="p">):</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inventory</span><span class="p">:</span> <span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">log_level</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;DEBUG&quot;</span><span class="p">)</span><span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">inventory</span> <span class="o">=</span> <span class="n">inventory</span> <span class="ow">or</span> <span class="n">default_inventory</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">hosts</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">allocated_ports</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
@@ -991,10 +990,10 @@ servers - start, stop, list.</p>
 
 
 <h3 class="doc doc-heading" id="fakenos.core.fakenos.FakeNOS._allocate_port">
-<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">_allocate_port</span><span class="p">(</span><span class="n">port</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">_allocate_port</span><span class="p">(</span><span class="n">port</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
 
-</h3>
+<a class="headerlink" href="#fakenos.core.fakenos.FakeNOS._allocate_port" title="Permanent link">&para;</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -1005,24 +1004,14 @@ servers - start, stop, list.</p>
   <ul>
       <li class="field-body">
         <b>port</b>
+            (<code>int</code>)
         – <p>integer or list of two integers - range to allocate port from</p>
       </li>
   </ul>
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 99</span>
-<span class="normal">100</span>
-<span class="normal">101</span>
-<span class="normal">102</span>
-<span class="normal">103</span>
-<span class="normal">104</span>
-<span class="normal">105</span>
-<span class="normal">106</span>
-<span class="normal">107</span>
-<span class="normal">108</span>
-<span class="normal">109</span>
-<span class="normal">110</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">110</span>
 <span class="normal">111</span>
 <span class="normal">112</span>
 <span class="normal">113</span>
@@ -1035,7 +1024,18 @@ servers - start, stop, list.</p>
 <span class="normal">120</span>
 <span class="normal">121</span>
 <span class="normal">122</span>
-<span class="normal">123</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">_allocate_port</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">port</span><span class="p">):</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">_allocate_port</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">port</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Method to allocate port for host</span>
 
@@ -1074,10 +1074,10 @@ servers - start, stop, list.</p>
 
 
 <h3 class="doc doc-heading" id="fakenos.core.fakenos.FakeNOS._configure_logging">
-<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">_configure_logging</span><span class="p">()</span></code>
+<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">_configure_logging</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
 
-</h3>
+<a class="headerlink" href="#fakenos.core.fakenos.FakeNOS._configure_logging" title="Permanent link">&para;</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -1086,9 +1086,9 @@ servers - start, stop, list.</p>
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">62</span>
-<span class="normal">63</span>
-<span class="normal">64</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">_configure_logging</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">_configure_logging</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Helper method to setup logging&quot;&quot;&quot;</span>
     <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">log_level</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
 </code></pre></div>
@@ -1105,10 +1105,10 @@ servers - start, stop, list.</p>
 
 
 <h3 class="doc doc-heading" id="fakenos.core.fakenos.FakeNOS._load_inventory">
-<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">_load_inventory</span><span class="p">()</span></code>
+<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">_load_inventory</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
 
-</h3>
+<a class="headerlink" href="#fakenos.core.fakenos.FakeNOS._load_inventory" title="Permanent link">&para;</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -1117,18 +1117,18 @@ servers - start, stop, list.</p>
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">66</span>
-<span class="normal">67</span>
-<span class="normal">68</span>
-<span class="normal">69</span>
-<span class="normal">70</span>
-<span class="normal">71</span>
-<span class="normal">72</span>
-<span class="normal">73</span>
-<span class="normal">74</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">74</span>
 <span class="normal">75</span>
 <span class="normal">76</span>
-<span class="normal">77</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">_load_inventory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">_load_inventory</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Helper method to load FakeNOS inventory&quot;&quot;&quot;</span>
     <span class="c1"># load yaml inventory</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">inventory</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.yaml&quot;</span><span class="p">):</span>
@@ -1154,38 +1154,45 @@ servers - start, stop, list.</p>
 
 
 <h3 class="doc doc-heading" id="fakenos.core.fakenos.FakeNOS.init">
-<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">init</span><span class="p">()</span></code>
+<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">init</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
 
-</h3>
+<a class="headerlink" href="#fakenos.core.fakenos.FakeNOS.init" title="Permanent link">&para;</a></h3>
 
 
     <div class="doc doc-contents ">
 
-      <p>Helper method to initiate host objects and store them in self.hosts</p>
+      <p>Helper method to initiate host objects and store them in self.hosts, this
+method called automatically on FakeNOS object instantiation.        </p>
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">79</span>
-<span class="normal">80</span>
-<span class="normal">81</span>
-<span class="normal">82</span>
-<span class="normal">83</span>
-<span class="normal">84</span>
-<span class="normal">85</span>
-<span class="normal">86</span>
-<span class="normal">87</span>
-<span class="normal">88</span>
-<span class="normal">89</span>
-<span class="normal">90</span>
-<span class="normal">91</span>
-<span class="normal">92</span>
-<span class="normal">93</span>
-<span class="normal">94</span>
-<span class="normal">95</span>
-<span class="normal">96</span>
-<span class="normal">97</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Helper method to initiate host objects and store them in self.hosts&quot;&quot;&quot;</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Helper method to initiate host objects and store them in self.hosts, this</span>
+<span class="sd">    method called automatically on FakeNOS object instantiation.        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">host</span><span class="p">,</span> <span class="n">host_config</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">inventory</span><span class="p">[</span><span class="s2">&quot;hosts&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
             <span class="o">**</span><span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">inventory</span><span class="p">[</span><span class="s2">&quot;default&quot;</span><span class="p">]),</span>
@@ -1217,10 +1224,10 @@ servers - start, stop, list.</p>
 
 
 <h3 class="doc doc-heading" id="fakenos.core.fakenos.FakeNOS.list_hosts">
-<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">list_hosts</span><span class="p">(</span><span class="n">hosts</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">list_hosts</span><span class="p">(</span><span class="n">hosts</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span></code>
 
 
-</h3>
+<a class="headerlink" href="#fakenos.core.fakenos.FakeNOS.list_hosts" title="Permanent link">&para;</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -1232,24 +1239,13 @@ servers - start, stop, list.</p>
       <li class="field-body">
         <b>hosts</b>
             (<code>str</code>)
-        – <p>glob pattern to match hosts by name</p>
+        – <p>glob pattern to match hosts to return by their name</p>
       </li>
   </ul>
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">157</span>
-<span class="normal">158</span>
-<span class="normal">159</span>
-<span class="normal">160</span>
-<span class="normal">161</span>
-<span class="normal">162</span>
-<span class="normal">163</span>
-<span class="normal">164</span>
-<span class="normal">165</span>
-<span class="normal">166</span>
-<span class="normal">167</span>
-<span class="normal">168</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">168</span>
 <span class="normal">169</span>
 <span class="normal">170</span>
 <span class="normal">171</span>
@@ -1257,14 +1253,29 @@ servers - start, stop, list.</p>
 <span class="normal">173</span>
 <span class="normal">174</span>
 <span class="normal">175</span>
-<span class="normal">176</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">list_hosts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hosts</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;*&quot;</span><span class="p">):</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">list_hosts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hosts</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;*&quot;</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Method to produce a list of hosts wit inventory and status information</span>
 
-<span class="sd">    :param hosts: glob pattern to match hosts by name</span>
+<span class="sd">    :param hosts: glob pattern to match hosts to return by their name</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hosts</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">fnmatch</span><span class="o">.</span><span class="n">fnmatchcase</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">hosts</span><span class="p">):</span>
+            <span class="k">continue</span>
         <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
             <span class="p">{</span>
                 <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">h</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
@@ -1291,10 +1302,10 @@ servers - start, stop, list.</p>
 
 
 <h3 class="doc doc-heading" id="fakenos.core.fakenos.FakeNOS.register_nos_plugin">
-<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">register_nos_plugin</span><span class="p">(</span><span class="n">plugin</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Nos</span><span class="p">])</span></code>
+<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">register_nos_plugin</span><span class="p">(</span><span class="n">plugin</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Nos</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
 
-</h3>
+<a class="headerlink" href="#fakenos.core.fakenos.FakeNOS.register_nos_plugin" title="Permanent link">&para;</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -1307,24 +1318,13 @@ must be registered before calling start method.</p>
       <li class="field-body">
         <b>plugin</b>
             (<code><span title="typing.Union">Union</span>[str, <span title="typing.Dict">Dict</span>, <span title="fakenos.core.nos.Nos">Nos</span>]</code>)
-        – <p>OS path string to NOS plugin .yaml/.yml or .py file,  dictionary or instance if Nos class</p>
+        – <p>OS path string to NOS plugin <code>.yaml/.yml</code> or <code>.py</code> file,  dictionary or instance if Nos class</p>
       </li>
   </ul>
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">135</span>
-<span class="normal">136</span>
-<span class="normal">137</span>
-<span class="normal">138</span>
-<span class="normal">139</span>
-<span class="normal">140</span>
-<span class="normal">141</span>
-<span class="normal">142</span>
-<span class="normal">143</span>
-<span class="normal">144</span>
-<span class="normal">145</span>
-<span class="normal">146</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">146</span>
 <span class="normal">147</span>
 <span class="normal">148</span>
 <span class="normal">149</span>
@@ -1333,12 +1333,23 @@ must be registered before calling start method.</p>
 <span class="normal">152</span>
 <span class="normal">153</span>
 <span class="normal">154</span>
-<span class="normal">155</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">register_nos_plugin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plugin</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Nos</span><span class="p">]):</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">register_nos_plugin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plugin</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Nos</span><span class="p">])</span><span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Method to register NOS plugin with FakeNOS object, all plugins</span>
 <span class="sd">    must be registered before calling start method.</span>
 
-<span class="sd">    :param plugin: OS path string to NOS plugin .yaml/.yml or .py file, </span>
+<span class="sd">    :param plugin: OS path string to NOS plugin `.yaml/.yml` or `.py` file, </span>
 <span class="sd">      dictionary or instance if Nos class</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">plugin</span><span class="p">,</span> <span class="n">Nos</span><span class="p">):</span>
@@ -1368,10 +1379,10 @@ must be registered before calling start method.</p>
 
 
 <h3 class="doc doc-heading" id="fakenos.core.fakenos.FakeNOS.start">
-<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></code>
+<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
 
-</h3>
+<a class="headerlink" href="#fakenos.core.fakenos.FakeNOS.start" title="Permanent link">&para;</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -1380,10 +1391,10 @@ must be registered before calling start method.</p>
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">125</span>
-<span class="normal">126</span>
-<span class="normal">127</span>
-<span class="normal">128</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Function to start NOS servers instances&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hosts</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
         <span class="n">host</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
@@ -1401,10 +1412,10 @@ must be registered before calling start method.</p>
 
 
 <h3 class="doc doc-heading" id="fakenos.core.fakenos.FakeNOS.stop">
-<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span></code>
+<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
 
-</h3>
+<a class="headerlink" href="#fakenos.core.fakenos.FakeNOS.stop" title="Permanent link">&para;</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -1413,10 +1424,10 @@ must be registered before calling start method.</p>
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">130</span>
-<span class="normal">131</span>
-<span class="normal">132</span>
-<span class="normal">133</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Function to stop NOS servers instances&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hosts</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
         <span class="n">host</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
@@ -1437,7 +1448,7 @@ must be registered before calling start method.</p>
 
   </div>
 
-<h2 id="host-core-class">Host Core Class</h2>
+<h2 id="host-core-class">Host Core Class<a class="headerlink" href="#host-core-class" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-object doc-class">
@@ -1535,7 +1546,7 @@ must be registered before calling start method.</p>
 <code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></code>
 
 
-</h3>
+<a class="headerlink" href="#fakenos.core.host.Host.start" title="Permanent link">&para;</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -1594,7 +1605,7 @@ must be registered before calling start method.</p>
 <code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span></code>
 
 
-</h3>
+<a class="headerlink" href="#fakenos.core.host.Host.stop" title="Permanent link">&para;</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -1627,7 +1638,7 @@ must be registered before calling start method.</p>
 
   </div>
 
-<h2 id="nos-core-class">Nos Core Class</h2>
+<h2 id="nos-core-class">Nos Core Class<a class="headerlink" href="#nos-core-class" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-object doc-class">
@@ -1646,7 +1657,7 @@ must be registered before calling start method.</p>
       <li class="field-body">
         <b>name</b>
             (<code>str</code>)
-        – <p>NOS name</p>
+        – <p>NOS plugin name</p>
       </li>
       <li class="field-body">
         <b>commands</b>
@@ -1662,21 +1673,21 @@ must be registered before calling start method.</p>
 
             <details class="quote">
               <summary>Source code in <code>fakenos\core\nos.py</code></summary>
-              <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">12</span>
+              <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
 <span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span>
 <span class="normal">16</span>
 <span class="normal">17</span>
 <span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">commands</span><span class="p">:</span><span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">initial_prompt</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">commands</span><span class="p">:</span><span class="nb">dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">initial_prompt</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span><span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Method to instantiate Nos Instance</span>
 
-<span class="sd">    :param name: NOS name</span>
+<span class="sd">    :param name: NOS plugin name</span>
 <span class="sd">    :param commands: dictionary of NOS commands</span>
 <span class="sd">    :param initial_prompt: NOS initial prompt</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -1706,10 +1717,10 @@ must be registered before calling start method.</p>
 
 
 <h3 class="doc doc-heading" id="fakenos.core.nos.Nos.from_dict">
-<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">nos</span><span class="o">.</span><span class="n">Nos</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">nos</span><span class="o">.</span><span class="n">Nos</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
 
-</h3>
+<a class="headerlink" href="#fakenos.core.nos.Nos.from_dict" title="Permanent link">&para;</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -1720,13 +1731,17 @@ must be registered before calling start method.</p>
   <ul>
       <li class="field-body">
         <b>data</b>
-        – <p>NOS dictionary</p>
+            (<code>dict</code>)
+        – <p>NOS dictionary  Sample NOS dictionary:  <code>python nos_plugin_dict = { "name": "MyFakeNOSPlugin", "initial_prompt": "{base_prompt}&gt;", "commands": { "terminal width 511": {"output": "", "help": "Set terminal width to 511"}, "terminal length 0": {"output": "", "help": "Set terminal length to 0"}, "show clock": {"output": "MyFakeNOSPlugin system time is 00:00:00"}, }, }</code></p>
       </li>
   </ul>
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\nos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">25</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
 <span class="normal">26</span>
 <span class="normal">27</span>
 <span class="normal">28</span>
@@ -1734,11 +1749,36 @@ must be registered before calling start method.</p>
 <span class="normal">30</span>
 <span class="normal">31</span>
 <span class="normal">32</span>
-<span class="normal">33</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">from_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">from_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span><span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Method to build NOS from dictionary data.</span>
 
 <span class="sd">    :param data: NOS dictionary</span>
+
+<span class="sd">    Sample NOS dictionary:</span>
+
+<span class="sd">    ```python</span>
+<span class="sd">    nos_plugin_dict = {</span>
+<span class="sd">        &quot;name&quot;: &quot;MyFakeNOSPlugin&quot;,</span>
+<span class="sd">        &quot;initial_prompt&quot;: &quot;{base_prompt}&gt;&quot;,</span>
+<span class="sd">        &quot;commands&quot;: {</span>
+<span class="sd">            &quot;terminal width 511&quot;: {&quot;output&quot;: &quot;&quot;, &quot;help&quot;: &quot;Set terminal width to 511&quot;},</span>
+<span class="sd">            &quot;terminal length 0&quot;: {&quot;output&quot;: &quot;&quot;, &quot;help&quot;: &quot;Set terminal length to 0&quot;},</span>
+<span class="sd">            &quot;show clock&quot;: {&quot;output&quot;: &quot;MyFakeNOSPlugin system time is 00:00:00&quot;},</span>
+<span class="sd">        },</span>
+<span class="sd">    }        </span>
+<span class="sd">    ```</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">commands</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;commands&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">commands</span><span class="p">)</span>
@@ -1757,10 +1797,10 @@ must be registered before calling start method.</p>
 
 
 <h3 class="doc doc-heading" id="fakenos.core.nos.Nos.from_file">
-<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">nos</span><span class="o">.</span><span class="n">Nos</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">nos</span><span class="o">.</span><span class="n">Nos</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
 
-</h3>
+<a class="headerlink" href="#fakenos.core.nos.Nos.from_file" title="Permanent link">&para;</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -1771,29 +1811,30 @@ must be registered before calling start method.</p>
   <ul>
       <li class="field-body">
         <b>data</b>
-        – <p>OS path to .yml, .yaml or .py file wit NOS data</p>
+            (<code>str</code>)
+        – <p>OS path string to <code>.yaml/.yml</code> or <code>.py</code> file with NOS data</p>
       </li>
   </ul>
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\nos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">62</span>
-<span class="normal">63</span>
-<span class="normal">64</span>
-<span class="normal">65</span>
-<span class="normal">66</span>
-<span class="normal">67</span>
-<span class="normal">68</span>
-<span class="normal">69</span>
-<span class="normal">70</span>
-<span class="normal">71</span>
-<span class="normal">72</span>
-<span class="normal">73</span>
-<span class="normal">74</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">from_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">from_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Method to load NOS from YAML or Python file</span>
 
-<span class="sd">    :param data: OS path to .yml, .yaml or .py file wit NOS data</span>
+<span class="sd">    :param data: OS path string to `.yaml/.yml` or `.py` file with NOS data</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.yaml&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">data</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.yml&quot;</span><span class="p">):</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -1816,10 +1857,10 @@ must be registered before calling start method.</p>
 
 
 <h3 class="doc doc-heading" id="fakenos.core.nos.Nos.from_module">
-<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">nos</span><span class="o">.</span><span class="n">Nos</span><span class="o">.</span><span class="n">from_module</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">nos</span><span class="o">.</span><span class="n">Nos</span><span class="o">.</span><span class="n">from_module</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
 
-</h3>
+<a class="headerlink" href="#fakenos.core.nos.Nos.from_module" title="Permanent link">&para;</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -1830,31 +1871,60 @@ must be registered before calling start method.</p>
   <ul>
       <li class="field-body">
         <b>data</b>
-        – <p>OSP path string to Python .py file</p>
+            (<code>str</code>)
+        – <p>OS path string to Python .py file  Sample Python NOS plugin file:  <code>python name = "MyFakeNOSPlugin"  initial_prompt = "{base_prompt}&gt;"  commands = { "terminal width 511": {"output": "", "help": "Set terminal width to 511"}, "terminal length 0": {"output": "", "help": "Set terminal length to 0"}, "show clock": {"output": "MyFakeNOSPlugin system time is 00:00:00"}, }</code></p>
       </li>
   </ul>
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\nos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span>
-<span class="normal">59</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">from_module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span>
+<span class="normal">94</span>
+<span class="normal">95</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">from_module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Method to import NOS data from python file.</span>
 
-<span class="sd">    :param data: OSP path string to Python .py file</span>
+<span class="sd">    :param data: OS path string to Python .py file</span>
+
+<span class="sd">    Sample Python NOS plugin file:</span>
+
+<span class="sd">    ```python</span>
+<span class="sd">    name = &quot;MyFakeNOSPlugin&quot;</span>
+
+<span class="sd">    initial_prompt = &quot;{base_prompt}&gt;&quot;</span>
+
+<span class="sd">    commands = {</span>
+<span class="sd">        &quot;terminal width 511&quot;: {&quot;output&quot;: &quot;&quot;, &quot;help&quot;: &quot;Set terminal width to 511&quot;},</span>
+<span class="sd">        &quot;terminal length 0&quot;: {&quot;output&quot;: &quot;&quot;, &quot;help&quot;: &quot;Set terminal length to 0&quot;},</span>
+<span class="sd">        &quot;show clock&quot;: {&quot;output&quot;: &quot;MyFakeNOSPlugin system time is 00:00:00&quot;},</span>
+<span class="sd">    }</span>
+<span class="sd">    ```</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># load .py file using this recipe</span>
     <span class="c1"># https://docs.python.org/3/library/importlib.html#importing-a-source-file-directly</span>
@@ -1879,10 +1949,10 @@ must be registered before calling start method.</p>
 
 
 <h3 class="doc doc-heading" id="fakenos.core.nos.Nos.from_yaml">
-<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">nos</span><span class="o">.</span><span class="n">Nos</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">nos</span><span class="o">.</span><span class="n">Nos</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
 
-</h3>
+<a class="headerlink" href="#fakenos.core.nos.Nos.from_yaml" title="Permanent link">&para;</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -1893,23 +1963,46 @@ must be registered before calling start method.</p>
   <ul>
       <li class="field-body">
         <b>data</b>
-        – <p>YAML structured text</p>
+            (<code>str</code>)
+        – <p>YAML structured text  Sample NOS YAML file content:  <code>yaml name: "MyFakeNOSPlugin" initial_prompt: "{base_prompt}&gt;" commands: terminal width 511: {"output": "", "help": "Set terminal width to 511"} terminal length 0: {"output": "", "help": "Set terminal length to 0"} show clock: {"output": "MyFakeNOSPlugin system time is 00:00:00"}</code></p>
       </li>
   </ul>
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\nos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">from_yaml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">from_yaml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Method to build NOS from YAML data.</span>
 
 <span class="sd">    :param data: YAML structured text</span>
+
+<span class="sd">    Sample NOS YAML file content:</span>
+
+<span class="sd">    ```yaml</span>
+<span class="sd">    name: &quot;MyFakeNOSPlugin&quot;</span>
+<span class="sd">    initial_prompt: &quot;{base_prompt}&gt;&quot;</span>
+<span class="sd">    commands:</span>
+<span class="sd">      terminal width 511: {&quot;output&quot;: &quot;&quot;, &quot;help&quot;: &quot;Set terminal width to 511&quot;}</span>
+<span class="sd">      terminal length 0: {&quot;output&quot;: &quot;&quot;, &quot;help&quot;: &quot;Set terminal length to 0&quot;}</span>
+<span class="sd">      show clock: {&quot;output&quot;: &quot;MyFakeNOSPlugin system time is 00:00:00&quot;}</span>
+<span class="sd">    ```</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 </code></pre></div>
@@ -1929,7 +2022,7 @@ must be registered before calling start method.</p>
 
   </div>
 
-<h2 id="tcpserverbase-core-class">TCPServerBase Core Class</h2>
+<h2 id="tcpserverbase-core-class">TCPServerBase Core Class<a class="headerlink" href="#tcpserverbase-core-class" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-object doc-class">
@@ -2012,7 +2105,7 @@ must be registered before calling start method.</p>
 <code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">servers</span><span class="o">.</span><span class="n">TCPServerBase</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">address</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">port</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">timeout</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span></code>
 
 
-</h3>
+<a class="headerlink" href="#fakenos.core.servers.TCPServerBase.start" title="Permanent link">&para;</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -2079,7 +2172,7 @@ must be registered before calling start method.</p>
 <code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">servers</span><span class="o">.</span><span class="n">TCPServerBase</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span></code>
 
 
-</h3>
+<a class="headerlink" href="#fakenos.core.servers.TCPServerBase.stop" title="Permanent link">&para;</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -2184,7 +2277,7 @@ must be registered before calling start method.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "content.tabs.link"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.6e54b5cd.min.js"></script>
