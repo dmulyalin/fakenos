@@ -595,9 +595,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#paramikosshserver" class="md-nav__link">
+    ParamikoSshServer
+  </a>
+  
+    <nav class="md-nav" aria-label="ParamikoSshServer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#fakenos.plugins.servers.ssh_server_paramiko.ParamikoSshServer.watchdog" class="md-nav__link">
     watchdog()
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -612,6 +625,14 @@
   </a>
   
     <nav class="md-nav" aria-label="Shell Plugins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cmdshell" class="md-nav__link">
+    CMDShell
+  </a>
+  
+    <nav class="md-nav" aria-label="CMDShell">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -639,6 +660,11 @@
   <a href="#fakenos.plugins.shell.cmd_shell.CMDShell.emptyline" class="md-nav__link">
     emptyline()
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -783,9 +809,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#paramikosshserver" class="md-nav__link">
+    ParamikoSshServer
+  </a>
+  
+    <nav class="md-nav" aria-label="ParamikoSshServer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#fakenos.plugins.servers.ssh_server_paramiko.ParamikoSshServer.watchdog" class="md-nav__link">
     watchdog()
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -800,6 +839,14 @@
   </a>
   
     <nav class="md-nav" aria-label="Shell Plugins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cmdshell" class="md-nav__link">
+    CMDShell
+  </a>
+  
+    <nav class="md-nav" aria-label="CMDShell">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -827,6 +874,11 @@
   <a href="#fakenos.plugins.shell.cmd_shell.CMDShell.emptyline" class="md-nav__link">
     emptyline()
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -883,6 +935,8 @@
   <h1>Built-in Plugins API</h1>
 
 <h2 id="nos-plugins">NOS Plugins<a class="headerlink" href="#nos-plugins" title="Permanent link">&para;</a></h2>
+<p>NOS plugins are at the heart of FakeNOS, they are what enables to realize its
+full potential.</p>
 <h3 id="cisco-ios">Cisco IOS<a class="headerlink" href="#cisco-ios" title="Permanent link">&para;</a></h3>
 
 
@@ -1031,6 +1085,8 @@
   </div>
 
 <h2 id="servers-plugins">Servers Plugins<a class="headerlink" href="#servers-plugins" title="Permanent link">&para;</a></h2>
+<p>Servers Plugins acts as an access layer, simulating device connections.</p>
+<h3 id="paramikosshserver">ParamikoSshServer<a class="headerlink" href="#paramikosshserver" title="Permanent link">&para;</a></h3>
 
 
   <div class="doc doc-object doc-class">
@@ -1089,7 +1145,7 @@
     <span class="n">password</span><span class="p">,</span>
     <span class="n">ssh_key_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">ssh_key_file_password</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">ssh_banner</span><span class="o">=</span><span class="s2">&quot;My SSH Server&quot;</span><span class="p">,</span>
+    <span class="n">ssh_banner</span><span class="o">=</span><span class="s2">&quot;FakeNOS Paramiko SSH Server&quot;</span><span class="p">,</span>
     <span class="n">shell_configuration</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">address</span><span class="o">=</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
     <span class="n">timeout</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
@@ -1147,11 +1203,11 @@
 
 
 
-<h3 class="doc doc-heading" id="fakenos.plugins.servers.ssh_server_paramiko.ParamikoSshServer.watchdog">
-<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">plugins</span><span class="o">.</span><span class="n">servers</span><span class="o">.</span><span class="n">ssh_server_paramiko</span><span class="o">.</span><span class="n">ParamikoSshServer</span><span class="o">.</span><span class="n">watchdog</span><span class="p">(</span><span class="n">run_srv</span><span class="p">,</span> <span class="n">session</span><span class="p">,</span> <span class="n">shell</span><span class="p">)</span></code>
+<h4 class="doc doc-heading" id="fakenos.plugins.servers.ssh_server_paramiko.ParamikoSshServer.watchdog">
+<code class="highlight language-python"><span class="n">watchdog</span><span class="p">(</span><span class="n">run_srv</span><span class="p">,</span> <span class="n">session</span><span class="p">,</span> <span class="n">shell</span><span class="p">)</span></code>
 
 
-<a class="headerlink" href="#fakenos.plugins.servers.ssh_server_paramiko.ParamikoSshServer.watchdog" title="Permanent link">&para;</a></h3>
+<a class="headerlink" href="#fakenos.plugins.servers.ssh_server_paramiko.ParamikoSshServer.watchdog" title="Permanent link">&para;</a></h4>
 
 
     <div class="doc doc-contents ">
@@ -1205,6 +1261,9 @@
   </div>
 
 <h2 id="shell-plugins">Shell Plugins<a class="headerlink" href="#shell-plugins" title="Permanent link">&para;</a></h2>
+<p>Shell Plugins act as a plumbing between servers plugins and NOS plugins,
+gluing, connecting them together.</p>
+<h3 id="cmdshell">CMDShell<a class="headerlink" href="#cmdshell" title="Permanent link">&para;</a></h3>
 
 
   <div class="doc doc-object doc-class">
@@ -1301,11 +1360,11 @@
 
 
 
-<h3 class="doc doc-heading" id="fakenos.plugins.shell.cmd_shell.CMDShell._check_prompt">
-<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">plugins</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">cmd_shell</span><span class="o">.</span><span class="n">CMDShell</span><span class="o">.</span><span class="n">_check_prompt</span><span class="p">(</span><span class="n">prompt_</span><span class="p">)</span></code>
+<h4 class="doc doc-heading" id="fakenos.plugins.shell.cmd_shell.CMDShell._check_prompt">
+<code class="highlight language-python"><span class="n">_check_prompt</span><span class="p">(</span><span class="n">prompt_</span><span class="p">)</span></code>
 
 
-<a class="headerlink" href="#fakenos.plugins.shell.cmd_shell.CMDShell._check_prompt" title="Permanent link">&para;</a></h3>
+<a class="headerlink" href="#fakenos.plugins.shell.cmd_shell.CMDShell._check_prompt" title="Permanent link">&para;</a></h4>
 
 
     <div class="doc doc-contents ">
@@ -1364,11 +1423,11 @@
 
 
 
-<h3 class="doc doc-heading" id="fakenos.plugins.shell.cmd_shell.CMDShell.default">
-<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">plugins</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">cmd_shell</span><span class="o">.</span><span class="n">CMDShell</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="n">command</span><span class="p">)</span></code>
+<h4 class="doc doc-heading" id="fakenos.plugins.shell.cmd_shell.CMDShell.default">
+<code class="highlight language-python"><span class="n">default</span><span class="p">(</span><span class="n">command</span><span class="p">)</span></code>
 
 
-<a class="headerlink" href="#fakenos.plugins.shell.cmd_shell.CMDShell.default" title="Permanent link">&para;</a></h3>
+<a class="headerlink" href="#fakenos.plugins.shell.cmd_shell.CMDShell.default" title="Permanent link">&para;</a></h4>
 
 
     <div class="doc doc-contents ">
@@ -1447,11 +1506,11 @@
 
 
 
-<h3 class="doc doc-heading" id="fakenos.plugins.shell.cmd_shell.CMDShell.do_help">
-<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">plugins</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">cmd_shell</span><span class="o">.</span><span class="n">CMDShell</span><span class="o">.</span><span class="n">do_help</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span></code>
+<h4 class="doc doc-heading" id="fakenos.plugins.shell.cmd_shell.CMDShell.do_help">
+<code class="highlight language-python"><span class="n">do_help</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span></code>
 
 
-<a class="headerlink" href="#fakenos.plugins.shell.cmd_shell.CMDShell.do_help" title="Permanent link">&para;</a></h3>
+<a class="headerlink" href="#fakenos.plugins.shell.cmd_shell.CMDShell.do_help" title="Permanent link">&para;</a></h4>
 
 
     <div class="doc doc-contents ">
@@ -1514,11 +1573,11 @@
 
 
 
-<h3 class="doc doc-heading" id="fakenos.plugins.shell.cmd_shell.CMDShell.emptyline">
-<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">plugins</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">cmd_shell</span><span class="o">.</span><span class="n">CMDShell</span><span class="o">.</span><span class="n">emptyline</span><span class="p">()</span></code>
+<h4 class="doc doc-heading" id="fakenos.plugins.shell.cmd_shell.CMDShell.emptyline">
+<code class="highlight language-python"><span class="n">emptyline</span><span class="p">()</span></code>
 
 
-<a class="headerlink" href="#fakenos.plugins.shell.cmd_shell.CMDShell.emptyline" title="Permanent link">&para;</a></h3>
+<a class="headerlink" href="#fakenos.plugins.shell.cmd_shell.CMDShell.emptyline" title="Permanent link">&para;</a></h4>
 
 
     <div class="doc doc-contents ">
@@ -1555,7 +1614,8 @@
   </div>
 
 <h2 id="tape-plugins">Tape Plugins<a class="headerlink" href="#tape-plugins" title="Permanent link">&para;</a></h2>
-<p>Nill</p>
+<p>Idea - Tape Plugins will allow to record interactions with real devices and build
+NOS plugins automatically using gathered data.</p>
 <h2 id="fakenos-cli">FakeNOS CLI<a class="headerlink" href="#fakenos-cli" title="Permanent link">&para;</a></h2>
 
 

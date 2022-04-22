@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fakenos-core-class" class="md-skip">
+        <a href="#fakenos-class" class="md-skip">
           Skip to content
         </a>
       
@@ -512,11 +512,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#fakenos-core-class" class="md-nav__link">
-    FakeNOS Core Class
+  <a href="#fakenos-class" class="md-nav__link">
+    FakeNOS Class
   </a>
   
-    <nav class="md-nav" aria-label="FakeNOS Core Class">
+    <nav class="md-nav" aria-label="FakeNOS Class">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -581,11 +581,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#host-core-class" class="md-nav__link">
-    Host Core Class
+  <a href="#host-class" class="md-nav__link">
+    Host Class
   </a>
   
-    <nav class="md-nav" aria-label="Host Core Class">
+    <nav class="md-nav" aria-label="Host Class">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -608,11 +608,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nos-core-class" class="md-nav__link">
-    Nos Core Class
+  <a href="#nos-class" class="md-nav__link">
+    Nos Class
   </a>
   
-    <nav class="md-nav" aria-label="Nos Core Class">
+    <nav class="md-nav" aria-label="Nos Class">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -649,11 +649,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tcpserverbase-core-class" class="md-nav__link">
-    TCPServerBase Core Class
+  <a href="#tcpserverbase-class" class="md-nav__link">
+    TCPServerBase Class
   </a>
   
-    <nav class="md-nav" aria-label="TCPServerBase Core Class">
+    <nav class="md-nav" aria-label="TCPServerBase Class">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -729,11 +729,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#fakenos-core-class" class="md-nav__link">
-    FakeNOS Core Class
+  <a href="#fakenos-class" class="md-nav__link">
+    FakeNOS Class
   </a>
   
-    <nav class="md-nav" aria-label="FakeNOS Core Class">
+    <nav class="md-nav" aria-label="FakeNOS Class">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -798,11 +798,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#host-core-class" class="md-nav__link">
-    Host Core Class
+  <a href="#host-class" class="md-nav__link">
+    Host Class
   </a>
   
-    <nav class="md-nav" aria-label="Host Core Class">
+    <nav class="md-nav" aria-label="Host Class">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -825,11 +825,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nos-core-class" class="md-nav__link">
-    Nos Core Class
+  <a href="#nos-class" class="md-nav__link">
+    Nos Class
   </a>
   
-    <nav class="md-nav" aria-label="Nos Core Class">
+    <nav class="md-nav" aria-label="Nos Class">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -866,11 +866,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tcpserverbase-core-class" class="md-nav__link">
-    TCPServerBase Core Class
+  <a href="#tcpserverbase-class" class="md-nav__link">
+    TCPServerBase Class
   </a>
   
-    <nav class="md-nav" aria-label="TCPServerBase Core Class">
+    <nav class="md-nav" aria-label="TCPServerBase Class">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -912,7 +912,7 @@
 
   <h1>Core API</h1>
 
-<h2 id="fakenos-core-class">FakeNOS Core Class<a class="headerlink" href="#fakenos-core-class" title="Permanent link">&para;</a></h2>
+<h2 id="fakenos-class">FakeNOS Class<a class="headerlink" href="#fakenos-class" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-object doc-class">
@@ -940,8 +940,7 @@
 
             <details class="quote">
               <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-              <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">58</span>
-<span class="normal">59</span>
+              <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">59</span>
 <span class="normal">60</span>
 <span class="normal">61</span>
 <span class="normal">62</span>
@@ -951,7 +950,8 @@
 <span class="normal">66</span>
 <span class="normal">67</span>
 <span class="normal">68</span>
-<span class="normal">69</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inventory</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">log_level</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;DEBUG&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">69</span>
+<span class="normal">70</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inventory</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">log_level</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;DEBUG&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">inventory</span> <span class="o">=</span> <span class="n">inventory</span> <span class="ow">or</span> <span class="n">default_inventory</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">hosts</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">allocated_ports</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
@@ -1011,12 +1011,7 @@
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">111</span>
-<span class="normal">112</span>
-<span class="normal">113</span>
-<span class="normal">114</span>
-<span class="normal">115</span>
-<span class="normal">116</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">116</span>
 <span class="normal">117</span>
 <span class="normal">118</span>
 <span class="normal">119</span>
@@ -1035,7 +1030,12 @@
 <span class="normal">132</span>
 <span class="normal">133</span>
 <span class="normal">134</span>
-<span class="normal">135</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">_allocate_port</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">port</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">_allocate_port</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">port</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Method to allocate port for host</span>
 
@@ -1086,9 +1086,9 @@
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">71</span>
-<span class="normal">72</span>
-<span class="normal">73</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">_configure_logging</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">_configure_logging</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Helper method to setup logging&quot;&quot;&quot;</span>
     <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">log_level</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
 </code></pre></div>
@@ -1117,8 +1117,7 @@
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">75</span>
-<span class="normal">76</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">76</span>
 <span class="normal">77</span>
 <span class="normal">78</span>
 <span class="normal">79</span>
@@ -1128,7 +1127,12 @@
 <span class="normal">83</span>
 <span class="normal">84</span>
 <span class="normal">85</span>
-<span class="normal">86</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">_load_inventory</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">_load_inventory</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Helper method to load FakeNOS inventory&quot;&quot;&quot;</span>
     <span class="c1"># load yaml inventory</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">inventory</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.yaml&quot;</span><span class="p">):</span>
@@ -1140,6 +1144,10 @@
         <span class="o">**</span><span class="n">default_inventory</span><span class="p">[</span><span class="s2">&quot;default&quot;</span><span class="p">],</span>
         <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="p">{}),</span>
     <span class="p">}</span>
+
+    <span class="c1"># validate inventory data</span>
+    <span class="n">inventory_model_instance</span> <span class="o">=</span> <span class="n">model_fakenos_inventory</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">inventory</span><span class="p">)</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">inventory_model_instance</span><span class="o">.</span><span class="n">schema_json</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)))</span>
 </code></pre></div>
 </td></tr></table>
         </details>
@@ -1167,12 +1175,7 @@ method called automatically on FakeNOS object instantiation.</p>
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 88</span>
-<span class="normal"> 89</span>
-<span class="normal"> 90</span>
-<span class="normal"> 91</span>
-<span class="normal"> 92</span>
-<span class="normal"> 93</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 93</span>
 <span class="normal"> 94</span>
 <span class="normal"> 95</span>
 <span class="normal"> 96</span>
@@ -1188,7 +1191,12 @@ method called automatically on FakeNOS object instantiation.</p>
 <span class="normal">106</span>
 <span class="normal">107</span>
 <span class="normal">108</span>
-<span class="normal">109</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Helper method to initiate host objects and store them in self.hosts, this</span>
 <span class="sd">    method called automatically on FakeNOS object instantiation.</span>
@@ -1245,12 +1253,7 @@ method called automatically on FakeNOS object instantiation.</p>
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">171</span>
-<span class="normal">172</span>
-<span class="normal">173</span>
-<span class="normal">174</span>
-<span class="normal">175</span>
-<span class="normal">176</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">176</span>
 <span class="normal">177</span>
 <span class="normal">178</span>
 <span class="normal">179</span>
@@ -1266,7 +1269,12 @@ method called automatically on FakeNOS object instantiation.</p>
 <span class="normal">189</span>
 <span class="normal">190</span>
 <span class="normal">191</span>
-<span class="normal">192</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">list_hosts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hosts</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;*&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">list_hosts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hosts</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;*&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Method to produce a list of hosts wit inventory and status information</span>
 
@@ -1324,12 +1332,7 @@ must be registered before calling start method.</p>
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">147</span>
-<span class="normal">148</span>
-<span class="normal">149</span>
-<span class="normal">150</span>
-<span class="normal">151</span>
-<span class="normal">152</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">152</span>
 <span class="normal">153</span>
 <span class="normal">154</span>
 <span class="normal">155</span>
@@ -1346,7 +1349,12 @@ must be registered before calling start method.</p>
 <span class="normal">166</span>
 <span class="normal">167</span>
 <span class="normal">168</span>
-<span class="normal">169</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">register_nos_plugin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plugin</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Nos</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">register_nos_plugin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plugin</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Nos</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Method to register NOS plugin with FakeNOS object, all plugins</span>
 <span class="sd">    must be registered before calling start method.</span>
@@ -1395,10 +1403,10 @@ must be registered before calling start method.</p>
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">137</span>
-<span class="normal">138</span>
-<span class="normal">139</span>
-<span class="normal">140</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Function to start NOS servers instances&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hosts</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
         <span class="n">host</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
@@ -1428,10 +1436,10 @@ must be registered before calling start method.</p>
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">142</span>
-<span class="normal">143</span>
-<span class="normal">144</span>
-<span class="normal">145</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Function to stop NOS servers instances&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hosts</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
         <span class="n">host</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
@@ -1452,7 +1460,7 @@ must be registered before calling start method.</p>
 
   </div>
 
-<h2 id="host-core-class">Host Core Class<a class="headerlink" href="#host-core-class" title="Permanent link">&para;</a></h2>
+<h2 id="host-class">Host Class<a class="headerlink" href="#host-class" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-object doc-class">
@@ -1642,7 +1650,7 @@ must be registered before calling start method.</p>
 
   </div>
 
-<h2 id="nos-core-class">Nos Core Class<a class="headerlink" href="#nos-core-class" title="Permanent link">&para;</a></h2>
+<h2 id="nos-class">Nos Class<a class="headerlink" href="#nos-class" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-object doc-class">
@@ -2046,7 +2054,7 @@ commands:
 
   </div>
 
-<h2 id="tcpserverbase-core-class">TCPServerBase Core Class<a class="headerlink" href="#tcpserverbase-core-class" title="Permanent link">&para;</a></h2>
+<h2 id="tcpserverbase-class">TCPServerBase Class<a class="headerlink" href="#tcpserverbase-class" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-object doc-class">

@@ -550,13 +550,45 @@
   <h1>Running in Docker Container</h1>
 
 <p>FakeNOS GitHub repository contains <code>docker-compose</code> and <code>Docker</code> files to build
-and start FakeNOS in a container. To use it, providing that GIT, Docker and
-Docker-Compose installed on the system:</p>
+and start FakeNOS in a container. To use it, providing that you already installed 
+<a href="https://docs.docker.com/engine/install/">Docker</a>, 
+<a href="https://docs.docker.com/compose/install/">Docker-Compose</a> and 
+<a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">GIT</a> on the system:</p>
+<div class="annotate highlight"><pre><span></span><code>git clone https://github.com/dmulyalin/fakenos.git   <span class="c1"># (1)</span>
+<span class="nb">cd</span> fakenos/docker/                                   <span class="c1"># (2)</span>
+docker-compose up -d                                 <span class="c1"># (3)</span>
+ssh <span class="m">10</span>.100.0.2 -l user -p <span class="m">6001</span>                       <span class="c1"># (4)</span>
+</code></pre></div>
 <ol>
-<li>Clone FakeNOS repository: <code>git clone https://github.com/dmulyalin/fakenos.git</code></li>
-<li>Build container: <code>docker-compose up</code></li>
-<li>Access FakeNOS router: <code>ssh 10.100.0.2 -l user -p 6001</code></li>
+<li>Clone FakeNOS repository from GitHub</li>
+<li>Navigate to fakenos docker directory</li>
+<li>Build and start container in detached (<code>-d</code>) mode</li>
+<li>Initiate SSH connection to FakeNOS router</li>
 </ol>
+<p><code>fakenos</code> container uses  <code>10.100.0.2</code> IP address by default as specified in 
+<code>docker-compose.yaml</code> file.</p>
+<p><code>fakenos/docker/</code> folder contains <code>fakenos_inventory.yaml</code> file, with inventory 
+that is used to start FakeNOS inside a container:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">default</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;user&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;user&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">10000</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">60000</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">  </span><span class="nt">server</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">plugin</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ParamikoSshServer&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">configuration</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.0.0.0&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="w">  </span><span class="nt">shell</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">plugin</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;CMDShell&quot;</span><span class="p p-Indicator">,</span><span class="nt"> configuration</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}}</span><span class="w"></span>
+<span class="w">  </span><span class="nt">nos</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">plugin</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;cisco_ios&quot;</span><span class="p p-Indicator">,</span><span class="nt"> configuration</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}}</span><span class="w"></span>
+
+<span class="nt">hosts</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">router</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="nv">10</span><span class="p p-Indicator">,</span><span class="nt"> port</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">6001</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">7000</span><span class="p p-Indicator">]}</span><span class="w"></span>
+</code></pre></div>
+<p>Adjust inventory settings before running the container or update inventory content 
+and restart <code>fakenos</code> container to apply changes - <code>docker restart fakenos</code></p>
+<p>Inventory file bound to the <code>fakenos</code> container as a <code>volume</code> in docker-compose file, 
+as a result any changes to <code>fakenos_inventory.yaml</code> file visible to <code>fakenos</code> process 
+running inside the container.</p>
 
               
             </article>
