@@ -556,19 +556,23 @@
 
 
 
-<h1 id="basic-usage">Basic Usage<a class="headerlink" href="#basic-usage" title="Permanent link">&para;</a></h1>
+<h1 id="basic-usage">Basic Usage<a class="headerlink" href="#basic-usage" title="Permanent link">#</a></h1>
 <p>This code starts two devices listening for SSH connections on 127.0.0.1 address
 ports 6001 and 6002 named <code>router1</code> and <code>router2</code> respectively:</p>
-<div class="highlight"><pre><span></span><code>from fakenos import FakeNOS
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">fakenos</span> <span class="kn">import</span> <span class="n">FakeNOS</span>
 
-network = FakeNOS()
-network.start()
+<span class="n">network</span> <span class="o">=</span> <span class="n">FakeNOS</span><span class="p">()</span>
+<span class="n">network</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </code></pre></div>
 <p>Initiate SSH connection using default username <code>user</code> and password <code>user</code>:</p>
-<div class="highlight"><pre><span></span><code>ssh 127.0.0.1 -l user -p 6001
-ssh 127.0.0.1 -l user -p 6002
+<div class="highlight"><pre><span></span><code>ssh <span class="m">127</span>.0.0.1 -l user -p <span class="m">6001</span>
+ssh <span class="m">127</span>.0.0.1 -l user -p <span class="m">6002</span>
 </code></pre></div>
-<h1 id="using-custom-inventory">Using Custom Inventory<a class="headerlink" href="#using-custom-inventory" title="Permanent link">&para;</a></h1>
+<p>The equivalent to running above code would be to run FakeNOS CLI without
+any arguments:</p>
+<div class="highlight"><pre><span></span><code>fakenos
+</code></pre></div>
+<h1 id="using-custom-inventory">Using Custom Inventory<a class="headerlink" href="#using-custom-inventory" title="Permanent link">#</a></h1>
 <p>FakeNOS uses Inventory dictionary to define a set of SSH servers to start.</p>
 <p>Sample inventory data and code to start the servers:</p>
 <div class="annotate highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">fakenos</span> <span class="kn">import</span> <span class="n">FakeNOS</span>
@@ -618,9 +622,62 @@ ssh 127.0.0.1 -l user -p 6002
 <li>Override <code>username</code> and <code>password</code> defined in <code>default</code> section</li>
 <li>Start two hosts <code>core-router1</code> and <code>core-router2</code> using next available
    ports from provided range</li>
-<li>Settings used by all hosts by default </li>
+<li>Settings used by all hosts by default</li>
 </ol>
-<h1 id="generating-ssh-private-key">Generating SSH private key<a class="headerlink" href="#generating-ssh-private-key" title="Permanent link">&para;</a></h1>
+<p>Alternative to running above code is to supply custom inventory to
+FakeNOS CLI tool:</p>
+<div class="highlight"><pre><span></span><code>fakenos -i path/to/my_inventory.yaml
+</code></pre></div>
+<p>Where <code>my_inventory.yaml</code> could contain equivalent to above Python code 
+YAML structured inventory:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">default</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">user</span><span class="w"></span>
+<span class="w">  </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">user</span><span class="w"></span>
+<span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">5000</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">6000</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">  </span><span class="nt">server</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">plugin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ParamikoSshServer</span><span class="w"></span>
+<span class="w">    </span><span class="nt">configuration</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">127.0.0.1</span><span class="w"></span>
+<span class="w">      </span><span class="nt">ssh_key_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./ssh-keys/ssh_host_rsa_key</span><span class="w"></span>
+<span class="w">      </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="w">  </span><span class="nt">shell</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">configuration</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w"></span>
+<span class="w">    </span><span class="nt">plugin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CMDShell</span><span class="w"></span>
+<span class="w">  </span><span class="nt">nos</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">configuration</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w"></span>
+<span class="w">    </span><span class="nt">plugin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cisco_ios</span><span class="w"></span>
+<span class="nt">hosts</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">R1</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fakenos</span><span class="w"></span>
+<span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5001</span><span class="w"></span>
+<span class="w">    </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fakenos</span><span class="w"></span>
+<span class="w">    </span><span class="nt">server</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">plugin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ParamikoSshServer</span><span class="w"></span>
+<span class="w">      </span><span class="nt">configuration</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0.0.0</span><span class="w"></span>
+<span class="w">    </span><span class="nt">shell</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">plugin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CMDShell</span><span class="w"></span>
+<span class="w">      </span><span class="nt">configuration</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">intro</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Custom SSH Shell</span><span class="w"></span>
+<span class="w">  </span><span class="nt">R2</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w"></span>
+<span class="w">  </span><span class="nt">core-router</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">5000</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">6000</span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div>
+<p>Or could contain this simplified inventory:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">default</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">user</span><span class="w"></span>
+<span class="w">  </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">user</span><span class="w"></span>
+<span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">5000</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">6000</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">  </span><span class="nt">server</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">plugin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ParamikoSshServer</span><span class="w"></span>
+<span class="w">    </span><span class="nt">configuration</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0.0.0</span><span class="w"></span>
+<span class="nt">hosts</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">router</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w"></span>
+</code></pre></div>
+<h1 id="generating-ssh-private-key">Generating SSH private key<a class="headerlink" href="#generating-ssh-private-key" title="Permanent link">#</a></h1>
 <p>By default FakeNOS uses SSH private key embedded with the package, making that key
 publicly available, which is insecure. Instead, FakeNOS can use locally generated SSH key.</p>
 <p><strong>Linux</strong></p>

@@ -626,7 +626,7 @@
 
   <h1>FakeNOS Inventory</h1>
 
-<p>FakeNOS uses inventory data to control its behavior. </p>
+<p>FakeNOS uses inventory data to control its behavior.</p>
 <p>Code example demonstrating how to use FakeNOS inventory dictionary:</p>
 <div class="annotate highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">fakenos</span> <span class="kn">import</span> <span class="n">FakeNOS</span>
 
@@ -675,15 +675,15 @@
 <li>Override <code>username</code> and <code>password</code> defined in <code>default</code> section</li>
 <li>Start two hosts <code>core-router1</code> and <code>core-router2</code> using next available
    ports from provided range</li>
-<li>Settings used by all hosts by default </li>
+<li>Settings used by all hosts by default</li>
 </ol>
-<h2 id="fakenos-inventory-explained">FakeNOS Inventory Explained<a class="headerlink" href="#fakenos-inventory-explained" title="Permanent link">&para;</a></h2>
-<p>FakeNOS inventory consists of two top sections - <code>default</code> and <code>hosts</code> - 
-comprising two levels of inventory hierarchy. </p>
+<h2 id="fakenos-inventory-explained">FakeNOS Inventory Explained<a class="headerlink" href="#fakenos-inventory-explained" title="Permanent link">#</a></h2>
+<p>FakeNOS inventory consists of two top sections - <code>default</code> and <code>hosts</code> -
+comprising two levels of inventory hierarchy.</p>
 <p>Inventory <code>default</code> section contains parameters and configuration that FakeNOS
 uses by default for each host.</p>
 <p>Inventory <code>hosts</code> section is a dictionary keyed by hosts' names containing host
-definition. Any parameter defined per-host overrides parameters defined in 
+definition. Any parameter defined per-host overrides parameters defined in
 <code>default</code> section.</p>
 <p>Host definition can contain <code>count</code> parameter to define hosts in bulk, e.g.
 this inventory:</p>
@@ -694,18 +694,18 @@ this inventory:</p>
 <span class="p">}</span>
 </code></pre></div>
 <p>will result in FakeNOS running 10 instances of hosts servers named <code>router1</code>
-to <code>router10</code> using ports 5001 to 5010 respectively. That makes it very easy to 
+to <code>router10</code> using ports 5001 to 5010 respectively. That makes it very easy to
 define sets of hosts that use same configuration to scale the setup out.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If host inventory data contains <code>count</code> parameter, <code>port</code> parameter must be a list 
+<p>If host inventory data contains <code>count</code> parameter, <code>port</code> parameter must be a list
 of two integers representing range to allocate ports from. If host does not contains
 <code>count</code> parameter, <code>port</code> must be a positive integer from 1 - 65535 range.</p>
 </div>
-<h2 id="inventory-json-schema">Inventory JSON Schema<a class="headerlink" href="#inventory-json-schema" title="Permanent link">&para;</a></h2>
-<p>FakeNOS internally uses <a href="https://pydantic-docs.helpmanual.io/usage/models/">Pydantic</a> 
-models to validate inventory data and raise <code>ValidationError</code> if inventory does 
-not comply with defined schema. </p>
+<h2 id="inventory-json-schema">Inventory JSON Schema<a class="headerlink" href="#inventory-json-schema" title="Permanent link">#</a></h2>
+<p>FakeNOS internally uses <a href="https://pydantic-docs.helpmanual.io/usage/models/">Pydantic</a>
+models to validate inventory data and raise <code>ValidationError</code> if inventory does
+not comply with defined schema.</p>
 <p>While inventory modeled using Pydantic models, equivalent JSON Schema looks
 like this:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
@@ -950,8 +950,8 @@ like this:</p>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<h2 id="default-inventory">Default Inventory<a class="headerlink" href="#default-inventory" title="Permanent link">&para;</a></h2>
-<p>If not inventory data provided on FakeNOS object instantiation, FakeNOS falls back 
+<h2 id="default-inventory">Default Inventory<a class="headerlink" href="#default-inventory" title="Permanent link">#</a></h2>
+<p>If no inventory data provided on FakeNOS object instantiation, FakeNOS falls back
 on using default inventory configuration:</p>
 <div class="highlight"><pre><span></span><code><span class="n">default_inventory</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="p">{</span>

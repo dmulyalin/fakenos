@@ -541,6 +541,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#fakenos.core.fakenos.FakeNOS._split_pattern" class="md-nav__link">
+    _split_pattern()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#fakenos.core.fakenos.FakeNOS.init" class="md-nav__link">
     init()
   </a>
@@ -639,6 +646,13 @@
           <li class="md-nav__item">
   <a href="#fakenos.core.nos.Nos.from_yaml" class="md-nav__link">
     from_yaml()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakenos.core.nos.Nos.validate" class="md-nav__link">
+    validate()
   </a>
   
 </li>
@@ -758,6 +772,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#fakenos.core.fakenos.FakeNOS._split_pattern" class="md-nav__link">
+    _split_pattern()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#fakenos.core.fakenos.FakeNOS.init" class="md-nav__link">
     init()
   </a>
@@ -860,6 +881,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#fakenos.core.nos.Nos.validate" class="md-nav__link">
+    validate()
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -912,7 +940,7 @@
 
   <h1>Core API</h1>
 
-<h2 id="fakenos-class">FakeNOS Class<a class="headerlink" href="#fakenos-class" title="Permanent link">&para;</a></h2>
+<h2 id="fakenos-class">FakeNOS Class<a class="headerlink" href="#fakenos-class" title="Permanent link">#</a></h2>
 
 
   <div class="doc doc-object doc-class">
@@ -940,8 +968,7 @@
 
             <details class="quote">
               <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-              <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">59</span>
-<span class="normal">60</span>
+              <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">60</span>
 <span class="normal">61</span>
 <span class="normal">62</span>
 <span class="normal">63</span>
@@ -951,7 +978,8 @@
 <span class="normal">67</span>
 <span class="normal">68</span>
 <span class="normal">69</span>
-<span class="normal">70</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inventory</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">log_level</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;DEBUG&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">70</span>
+<span class="normal">71</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inventory</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">log_level</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;DEBUG&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">inventory</span> <span class="o">=</span> <span class="n">inventory</span> <span class="ow">or</span> <span class="n">default_inventory</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">hosts</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">allocated_ports</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
@@ -993,7 +1021,7 @@
 <code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">_allocate_port</span><span class="p">(</span><span class="n">port</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
 
-<a class="headerlink" href="#fakenos.core.fakenos.FakeNOS._allocate_port" title="Permanent link">&para;</a></h3>
+<a class="headerlink" href="#fakenos.core.fakenos.FakeNOS._allocate_port" title="Permanent link">#</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -1011,9 +1039,7 @@
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">116</span>
-<span class="normal">117</span>
-<span class="normal">118</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">118</span>
 <span class="normal">119</span>
 <span class="normal">120</span>
 <span class="normal">121</span>
@@ -1035,7 +1061,9 @@
 <span class="normal">137</span>
 <span class="normal">138</span>
 <span class="normal">139</span>
-<span class="normal">140</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">_allocate_port</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">port</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">_allocate_port</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">port</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Method to allocate port for host</span>
 
@@ -1077,7 +1105,7 @@
 <code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">_configure_logging</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
 
-<a class="headerlink" href="#fakenos.core.fakenos.FakeNOS._configure_logging" title="Permanent link">&para;</a></h3>
+<a class="headerlink" href="#fakenos.core.fakenos.FakeNOS._configure_logging" title="Permanent link">#</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -1086,9 +1114,9 @@
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">72</span>
-<span class="normal">73</span>
-<span class="normal">74</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">_configure_logging</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">_configure_logging</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Helper method to setup logging&quot;&quot;&quot;</span>
     <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">log_level</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
 </code></pre></div>
@@ -1108,7 +1136,7 @@
 <code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">_load_inventory</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
 
-<a class="headerlink" href="#fakenos.core.fakenos.FakeNOS._load_inventory" title="Permanent link">&para;</a></h3>
+<a class="headerlink" href="#fakenos.core.fakenos.FakeNOS._load_inventory" title="Permanent link">#</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -1117,8 +1145,7 @@
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">76</span>
-<span class="normal">77</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">77</span>
 <span class="normal">78</span>
 <span class="normal">79</span>
 <span class="normal">80</span>
@@ -1132,7 +1159,8 @@
 <span class="normal">88</span>
 <span class="normal">89</span>
 <span class="normal">90</span>
-<span class="normal">91</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">_load_inventory</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">91</span>
+<span class="normal">92</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">_load_inventory</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Helper method to load FakeNOS inventory&quot;&quot;&quot;</span>
     <span class="c1"># load yaml inventory</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">inventory</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.yaml&quot;</span><span class="p">):</span>
@@ -1147,7 +1175,73 @@
 
     <span class="c1"># validate inventory data</span>
     <span class="n">inventory_model_instance</span> <span class="o">=</span> <span class="n">model_fakenos_inventory</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">inventory</span><span class="p">)</span>
-    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">inventory_model_instance</span><span class="o">.</span><span class="n">schema_json</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)))</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;FakeNOS inventory validation succeeded&quot;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 class="doc doc-heading" id="fakenos.core.fakenos.FakeNOS._split_pattern">
+<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">_split_pattern</span><span class="p">(</span><span class="n">pattern</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span></code>
+
+
+<a class="headerlink" href="#fakenos.core.fakenos.FakeNOS._split_pattern" title="Permanent link">#</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Helper method to split pattern into a list of patterns.</p>
+
+  <p>Parameters:</p>
+  <ul>
+      <li class="field-body">
+        <b>pattern</b>
+            (<code><span title="typing.Union">Union</span>[str, <span title="typing.List">List</span>[str]]</code>)
+        – <p>glob pattern or list or comma separated list of patterns</p>
+      </li>
+  </ul>
+
+  <p>Returns:</p>
+  <ul>
+      <li class="field-body">
+            <code><span title="typing.List">List</span>[str]</code>
+        – <p>list of patterns</p>
+      </li>
+  </ul>
+
+        <details class="quote">
+          <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">_split_pattern</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Helper method to split pattern into a list of patterns.</span>
+
+<span class="sd">    :param pattern: glob pattern or list or comma separated list of patterns</span>
+<span class="sd">    :return: list of patterns</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">pattern</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
+        <span class="k">else</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pattern</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)]</span>
+    <span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
         </details>
@@ -1165,7 +1259,7 @@
 <code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">init</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
 
-<a class="headerlink" href="#fakenos.core.fakenos.FakeNOS.init" title="Permanent link">&para;</a></h3>
+<a class="headerlink" href="#fakenos.core.fakenos.FakeNOS.init" title="Permanent link">#</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -1175,9 +1269,7 @@ method called automatically on FakeNOS object instantiation.</p>
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 93</span>
-<span class="normal"> 94</span>
-<span class="normal"> 95</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 95</span>
 <span class="normal"> 96</span>
 <span class="normal"> 97</span>
 <span class="normal"> 98</span>
@@ -1196,7 +1288,9 @@ method called automatically on FakeNOS object instantiation.</p>
 <span class="normal">111</span>
 <span class="normal">112</span>
 <span class="normal">113</span>
-<span class="normal">114</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Helper method to initiate host objects and store them in self.hosts, this</span>
 <span class="sd">    method called automatically on FakeNOS object instantiation.</span>
@@ -1232,10 +1326,10 @@ method called automatically on FakeNOS object instantiation.</p>
 
 
 <h3 class="doc doc-heading" id="fakenos.core.fakenos.FakeNOS.list_hosts">
-<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">list_hosts</span><span class="p">(</span><span class="n">hosts</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span></code>
+<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">list_hosts</span><span class="p">(</span><span class="n">hosts</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span></code>
 
 
-<a class="headerlink" href="#fakenos.core.fakenos.FakeNOS.list_hosts" title="Permanent link">&para;</a></h3>
+<a class="headerlink" href="#fakenos.core.fakenos.FakeNOS.list_hosts" title="Permanent link">#</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -1246,56 +1340,58 @@ method called automatically on FakeNOS object instantiation.</p>
   <ul>
       <li class="field-body">
         <b>hosts</b>
-            (<code>str</code>)
-        – <p>glob pattern to match hosts to return by their name</p>
+            (<code><span title="typing.Union">Union</span>[str, <span title="typing.List">List</span>[str]]</code>)
+        – <p>glob pattern to match hosts to return by their name or list or comma separated list of patterns</p>
       </li>
   </ul>
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">176</span>
-<span class="normal">177</span>
-<span class="normal">178</span>
-<span class="normal">179</span>
-<span class="normal">180</span>
-<span class="normal">181</span>
-<span class="normal">182</span>
-<span class="normal">183</span>
-<span class="normal">184</span>
-<span class="normal">185</span>
-<span class="normal">186</span>
-<span class="normal">187</span>
-<span class="normal">188</span>
-<span class="normal">189</span>
-<span class="normal">190</span>
-<span class="normal">191</span>
-<span class="normal">192</span>
-<span class="normal">193</span>
-<span class="normal">194</span>
-<span class="normal">195</span>
-<span class="normal">196</span>
-<span class="normal">197</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">list_hosts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hosts</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;*&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">list_hosts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hosts</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="s2">&quot;*&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Method to produce a list of hosts wit inventory and status information</span>
 
-<span class="sd">    :param hosts: glob pattern to match hosts to return by their name</span>
+<span class="sd">    :param hosts: glob pattern to match hosts to return by their name or</span>
+<span class="sd">        list or comma separated list of patterns</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">hosts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_split_pattern</span><span class="p">(</span><span class="n">hosts</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hosts</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">fnmatch</span><span class="o">.</span><span class="n">fnmatchcase</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">hosts</span><span class="p">):</span>
-            <span class="k">continue</span>
-        <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-            <span class="p">{</span>
-                <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">h</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-                <span class="s2">&quot;nos&quot;</span><span class="p">:</span> <span class="n">h</span><span class="o">.</span><span class="n">nos_params</span><span class="p">[</span><span class="s2">&quot;plugin&quot;</span><span class="p">],</span>
-                <span class="s2">&quot;shell&quot;</span><span class="p">:</span> <span class="n">h</span><span class="o">.</span><span class="n">shell_params</span><span class="p">[</span><span class="s2">&quot;plugin&quot;</span><span class="p">],</span>
-                <span class="s2">&quot;server&quot;</span><span class="p">:</span> <span class="n">h</span><span class="o">.</span><span class="n">server_params</span><span class="p">[</span><span class="s2">&quot;plugin&quot;</span><span class="p">],</span>
-                <span class="s2">&quot;port&quot;</span><span class="p">:</span> <span class="n">h</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">port</span> <span class="k">if</span> <span class="n">h</span><span class="o">.</span><span class="n">server</span> <span class="k">else</span> <span class="n">h</span><span class="o">.</span><span class="n">port</span><span class="p">,</span>
-                <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="n">h</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">address</span> <span class="k">if</span> <span class="n">h</span><span class="o">.</span><span class="n">server</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
-                <span class="s2">&quot;base_prompt&quot;</span><span class="p">:</span> <span class="n">h</span><span class="o">.</span><span class="n">shell_params</span><span class="p">[</span><span class="s2">&quot;configuration&quot;</span><span class="p">][</span><span class="s2">&quot;base_prompt&quot;</span><span class="p">],</span>
-                <span class="s2">&quot;running&quot;</span><span class="p">:</span> <span class="n">h</span><span class="o">.</span><span class="n">running</span><span class="p">,</span>
-            <span class="p">}</span>
-        <span class="p">)</span>
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">fnmatch</span><span class="o">.</span><span class="n">fnmatchcase</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">hosts</span><span class="p">):</span>
+            <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">h</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                    <span class="s2">&quot;nos&quot;</span><span class="p">:</span> <span class="n">h</span><span class="o">.</span><span class="n">nos_params</span><span class="p">[</span><span class="s2">&quot;plugin&quot;</span><span class="p">],</span>
+                    <span class="s2">&quot;shell&quot;</span><span class="p">:</span> <span class="n">h</span><span class="o">.</span><span class="n">shell_params</span><span class="p">[</span><span class="s2">&quot;plugin&quot;</span><span class="p">],</span>
+                    <span class="s2">&quot;server&quot;</span><span class="p">:</span> <span class="n">h</span><span class="o">.</span><span class="n">server_params</span><span class="p">[</span><span class="s2">&quot;plugin&quot;</span><span class="p">],</span>
+                    <span class="s2">&quot;port&quot;</span><span class="p">:</span> <span class="n">h</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">port</span> <span class="k">if</span> <span class="n">h</span><span class="o">.</span><span class="n">server</span> <span class="k">else</span> <span class="n">h</span><span class="o">.</span><span class="n">port</span><span class="p">,</span>
+                    <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="n">h</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">address</span> <span class="k">if</span> <span class="n">h</span><span class="o">.</span><span class="n">server</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                    <span class="s2">&quot;base_prompt&quot;</span><span class="p">:</span> <span class="n">h</span><span class="o">.</span><span class="n">shell_params</span><span class="p">[</span><span class="s2">&quot;configuration&quot;</span><span class="p">][</span><span class="s2">&quot;base_prompt&quot;</span><span class="p">],</span>
+                    <span class="s2">&quot;running&quot;</span><span class="p">:</span> <span class="n">h</span><span class="o">.</span><span class="n">running</span><span class="p">,</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
         </details>
@@ -1313,7 +1409,7 @@ method called automatically on FakeNOS object instantiation.</p>
 <code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">register_nos_plugin</span><span class="p">(</span><span class="n">plugin</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Nos</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
 
-<a class="headerlink" href="#fakenos.core.fakenos.FakeNOS.register_nos_plugin" title="Permanent link">&para;</a></h3>
+<a class="headerlink" href="#fakenos.core.fakenos.FakeNOS.register_nos_plugin" title="Permanent link">#</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -1332,29 +1428,29 @@ must be registered before calling start method.</p>
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">152</span>
-<span class="normal">153</span>
-<span class="normal">154</span>
-<span class="normal">155</span>
-<span class="normal">156</span>
-<span class="normal">157</span>
-<span class="normal">158</span>
-<span class="normal">159</span>
-<span class="normal">160</span>
-<span class="normal">161</span>
-<span class="normal">162</span>
-<span class="normal">163</span>
-<span class="normal">164</span>
-<span class="normal">165</span>
-<span class="normal">166</span>
-<span class="normal">167</span>
-<span class="normal">168</span>
-<span class="normal">169</span>
-<span class="normal">170</span>
-<span class="normal">171</span>
-<span class="normal">172</span>
-<span class="normal">173</span>
-<span class="normal">174</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">register_nos_plugin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plugin</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Nos</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">register_nos_plugin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plugin</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Nos</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Method to register NOS plugin with FakeNOS object, all plugins</span>
 <span class="sd">    must be registered before calling start method.</span>
@@ -1391,25 +1487,48 @@ must be registered before calling start method.</p>
 
 
 <h3 class="doc doc-heading" id="fakenos.core.fakenos.FakeNOS.start">
-<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
+<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">hosts</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
 
-<a class="headerlink" href="#fakenos.core.fakenos.FakeNOS.start" title="Permanent link">&para;</a></h3>
+<a class="headerlink" href="#fakenos.core.fakenos.FakeNOS.start" title="Permanent link">#</a></h3>
 
 
     <div class="doc doc-contents ">
 
       <p>Function to start NOS servers instances</p>
 
+  <p>Parameters:</p>
+  <ul>
+      <li class="field-body">
+        <b>hosts</b>
+            (<code><span title="typing.Union">Union</span>[str, <span title="typing.List">List</span>[str]]</code>)
+        – <p>glob pattern to match hosts to start by their name or list or comma separated list of patterns</p>
+      </li>
+  </ul>
+
         <details class="quote">
           <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">142</span>
-<span class="normal">143</span>
-<span class="normal">144</span>
-<span class="normal">145</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Function to start NOS servers instances&quot;&quot;&quot;</span>
-    <span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hosts</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-        <span class="n">host</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hosts</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="s2">&quot;*&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Function to start NOS servers instances</span>
+
+<span class="sd">    :param hosts: glob pattern to match hosts to start by their name or</span>
+<span class="sd">        list or comma separated list of patterns</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">hosts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_split_pattern</span><span class="p">(</span><span class="n">hosts</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hosts</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">h</span><span class="o">.</span><span class="n">running</span> <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="n">fnmatch</span><span class="o">.</span><span class="n">fnmatchcase</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">hosts</span><span class="p">):</span>
+            <span class="n">h</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
         </details>
@@ -1424,25 +1543,48 @@ must be registered before calling start method.</p>
 
 
 <h3 class="doc doc-heading" id="fakenos.core.fakenos.FakeNOS.stop">
-<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
+<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fakenos</span><span class="o">.</span><span class="n">FakeNOS</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span><span class="n">hosts</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
 
-<a class="headerlink" href="#fakenos.core.fakenos.FakeNOS.stop" title="Permanent link">&para;</a></h3>
+<a class="headerlink" href="#fakenos.core.fakenos.FakeNOS.stop" title="Permanent link">#</a></h3>
 
 
     <div class="doc doc-contents ">
 
       <p>Function to stop NOS servers instances</p>
 
+  <p>Parameters:</p>
+  <ul>
+      <li class="field-body">
+        <b>hosts</b>
+            (<code><span title="typing.Union">Union</span>[str, <span title="typing.List">List</span>[str]]</code>)
+        – <p>glob pattern to match hosts to stop by their name or list or comma separated list of patterns</p>
+      </li>
+  </ul>
+
         <details class="quote">
           <summary>Source code in <code>fakenos\core\fakenos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">147</span>
-<span class="normal">148</span>
-<span class="normal">149</span>
-<span class="normal">150</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Function to stop NOS servers instances&quot;&quot;&quot;</span>
-    <span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hosts</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-        <span class="n">host</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hosts</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="s2">&quot;*&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Function to stop NOS servers instances</span>
+
+<span class="sd">    :param hosts: glob pattern to match hosts to stop by their name or</span>
+<span class="sd">        list or comma separated list of patterns</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">hosts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_split_pattern</span><span class="p">(</span><span class="n">hosts</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hosts</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">h</span><span class="o">.</span><span class="n">running</span> <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="n">fnmatch</span><span class="o">.</span><span class="n">fnmatchcase</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">hosts</span><span class="p">):</span>
+            <span class="n">h</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
         </details>
@@ -1460,7 +1602,7 @@ must be registered before calling start method.</p>
 
   </div>
 
-<h2 id="host-class">Host Class<a class="headerlink" href="#host-class" title="Permanent link">&para;</a></h2>
+<h2 id="host-class">Host Class<a class="headerlink" href="#host-class" title="Permanent link">#</a></h2>
 
 
   <div class="doc doc-object doc-class">
@@ -1558,7 +1700,7 @@ must be registered before calling start method.</p>
 <code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></code>
 
 
-<a class="headerlink" href="#fakenos.core.host.Host.start" title="Permanent link">&para;</a></h3>
+<a class="headerlink" href="#fakenos.core.host.Host.start" title="Permanent link">#</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -1617,7 +1759,7 @@ must be registered before calling start method.</p>
 <code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span></code>
 
 
-<a class="headerlink" href="#fakenos.core.host.Host.stop" title="Permanent link">&para;</a></h3>
+<a class="headerlink" href="#fakenos.core.host.Host.stop" title="Permanent link">#</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -1650,7 +1792,7 @@ must be registered before calling start method.</p>
 
   </div>
 
-<h2 id="nos-class">Nos Class<a class="headerlink" href="#nos-class" title="Permanent link">&para;</a></h2>
+<h2 id="nos-class">Nos Class<a class="headerlink" href="#nos-class" title="Permanent link">#</a></h2>
 
 
   <div class="doc doc-object doc-class">
@@ -1685,19 +1827,23 @@ must be registered before calling start method.</p>
 
             <details class="quote">
               <summary>Source code in <code>fakenos\core\nos.py</code></summary>
-              <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
+              <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">15</span>
 <span class="normal">16</span>
 <span class="normal">17</span>
 <span class="normal">18</span>
 <span class="normal">19</span>
 <span class="normal">20</span>
 <span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">commands</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">initial_prompt</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -1710,6 +1856,10 @@ must be registered before calling start method.</p>
     <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span> <span class="ow">or</span> <span class="s2">&quot;noname&quot;</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">commands</span> <span class="o">=</span> <span class="n">commands</span> <span class="ow">or</span> <span class="p">{}</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">initial_prompt</span> <span class="o">=</span> <span class="n">initial_prompt</span> <span class="ow">or</span> <span class="s2">&quot;noprompt&quot;</span>
+
+    <span class="c1"># make sure to validate NOS attributes if Nos class instantiated with them</span>
+    <span class="k">if</span> <span class="n">commands</span> <span class="ow">or</span> <span class="n">name</span> <span class="ow">or</span> <span class="n">initial_prompt</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
             </details>
@@ -1736,7 +1886,7 @@ must be registered before calling start method.</p>
 <code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">nos</span><span class="o">.</span><span class="n">Nos</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
 
-<a class="headerlink" href="#fakenos.core.nos.Nos.from_dict" title="Permanent link">&para;</a></h3>
+<a class="headerlink" href="#fakenos.core.nos.Nos.from_dict" title="Permanent link">#</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -1765,27 +1915,28 @@ must be registered before calling start method.</p>
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\nos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">from_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">from_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Method to build NOS from dictionary data.</span>
 
@@ -1806,6 +1957,7 @@ must be registered before calling start method.</p>
     <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">commands</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;commands&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">commands</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">initial_prompt</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;initial_prompt&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">initial_prompt</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
         </details>
@@ -1823,7 +1975,7 @@ must be registered before calling start method.</p>
 <code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">nos</span><span class="o">.</span><span class="n">Nos</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
 
-<a class="headerlink" href="#fakenos.core.nos.Nos.from_file" title="Permanent link">&para;</a></h3>
+<a class="headerlink" href="#fakenos.core.nos.Nos.from_file" title="Permanent link">#</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -1841,18 +1993,18 @@ must be registered before calling start method.</p>
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\nos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 91</span>
-<span class="normal"> 92</span>
-<span class="normal"> 93</span>
-<span class="normal"> 94</span>
-<span class="normal"> 95</span>
-<span class="normal"> 96</span>
-<span class="normal"> 97</span>
-<span class="normal"> 98</span>
-<span class="normal"> 99</span>
-<span class="normal">100</span>
-<span class="normal">101</span>
-<span class="normal">102</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">from_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">from_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Method to load NOS from YAML or Python file</span>
 
@@ -1881,7 +2033,7 @@ must be registered before calling start method.</p>
 <code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">nos</span><span class="o">.</span><span class="n">Nos</span><span class="o">.</span><span class="n">from_module</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
 
-<a class="headerlink" href="#fakenos.core.nos.Nos.from_module" title="Permanent link">&para;</a></h3>
+<a class="headerlink" href="#fakenos.core.nos.Nos.from_module" title="Permanent link">#</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -1910,33 +2062,34 @@ commands = {
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\nos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">63</span>
-<span class="normal">64</span>
-<span class="normal">65</span>
-<span class="normal">66</span>
-<span class="normal">67</span>
-<span class="normal">68</span>
-<span class="normal">69</span>
-<span class="normal">70</span>
-<span class="normal">71</span>
-<span class="normal">72</span>
-<span class="normal">73</span>
-<span class="normal">74</span>
-<span class="normal">75</span>
-<span class="normal">76</span>
-<span class="normal">77</span>
-<span class="normal">78</span>
-<span class="normal">79</span>
-<span class="normal">80</span>
-<span class="normal">81</span>
-<span class="normal">82</span>
-<span class="normal">83</span>
-<span class="normal">84</span>
-<span class="normal">85</span>
-<span class="normal">86</span>
-<span class="normal">87</span>
-<span class="normal">88</span>
-<span class="normal">89</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">from_module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">from_module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Method to import NOS data from python file.</span>
 
@@ -1963,6 +2116,7 @@ commands = {
     <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">commands</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="s2">&quot;commands&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">commands</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">initial_prompt</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="s2">&quot;initial_prompt&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">initial_prompt</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
         </details>
@@ -1980,7 +2134,7 @@ commands = {
 <code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">nos</span><span class="o">.</span><span class="n">Nos</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
 
-<a class="headerlink" href="#fakenos.core.nos.Nos.from_yaml" title="Permanent link">&para;</a></h3>
+<a class="headerlink" href="#fakenos.core.nos.Nos.from_yaml" title="Permanent link">#</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -2006,22 +2160,23 @@ commands:
 
         <details class="quote">
           <summary>Source code in <code>fakenos\core\nos.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span>
-<span class="normal">59</span>
-<span class="normal">60</span>
-<span class="normal">61</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">from_yaml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">from_yaml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Method to build NOS from YAML data.</span>
 
@@ -2037,6 +2192,55 @@ commands:
 <span class="sd">    :param data: YAML structured text</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
+</code></pre></div>
+</td></tr></table>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 class="doc doc-heading" id="fakenos.core.nos.Nos.validate">
+<code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">nos</span><span class="o">.</span><span class="n">Nos</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
+
+
+<a class="headerlink" href="#fakenos.core.nos.Nos.validate" title="Permanent link">#</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Method to validate NOS attributes: commands, name, initial prompt - using 
+Pydantic models, raises ValidationError on failure.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>fakenos\core\nos.py</code></summary>
+          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Method to validate NOS attributes: commands, name, initial prompt - using </span>
+<span class="sd">    Pydantic models, raises ValidationError on failure.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">model_nos_attributes</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+        <span class="n">initial_prompt</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">initial_prompt</span><span class="p">,</span>
+        <span class="n">commands</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">commands</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> NOS attributes validation succeeded&quot;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
         </details>
@@ -2054,7 +2258,7 @@ commands:
 
   </div>
 
-<h2 id="tcpserverbase-class">TCPServerBase Class<a class="headerlink" href="#tcpserverbase-class" title="Permanent link">&para;</a></h2>
+<h2 id="tcpserverbase-class">TCPServerBase Class<a class="headerlink" href="#tcpserverbase-class" title="Permanent link">#</a></h2>
 
 
   <div class="doc doc-object doc-class">
@@ -2137,7 +2341,7 @@ commands:
 <code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">servers</span><span class="o">.</span><span class="n">TCPServerBase</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">address</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">port</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">timeout</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span></code>
 
 
-<a class="headerlink" href="#fakenos.core.servers.TCPServerBase.start" title="Permanent link">&para;</a></h3>
+<a class="headerlink" href="#fakenos.core.servers.TCPServerBase.start" title="Permanent link">#</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -2204,7 +2408,7 @@ commands:
 <code class="highlight language-python"><span class="n">fakenos</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">servers</span><span class="o">.</span><span class="n">TCPServerBase</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span></code>
 
 
-<a class="headerlink" href="#fakenos.core.servers.TCPServerBase.stop" title="Permanent link">&para;</a></h3>
+<a class="headerlink" href="#fakenos.core.servers.TCPServerBase.stop" title="Permanent link">#</a></h3>
 
 
     <div class="doc doc-contents ">

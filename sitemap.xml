@@ -2,47 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://fakenos.github.io/</loc>
-         <lastmod>2022-04-22</lastmod>
+         <lastmod>2022-04-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fakenos.github.io/builtin_plugins_api_reference/</loc>
-         <lastmod>2022-04-22</lastmod>
+         <lastmod>2022-04-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fakenos.github.io/core_api_reference/</loc>
-         <lastmod>2022-04-22</lastmod>
+         <lastmod>2022-04-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fakenos.github.io/creating_nos_plugin/</loc>
-         <lastmod>2022-04-22</lastmod>
+         <lastmod>2022-04-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fakenos.github.io/fakenos_inventory/</loc>
-         <lastmod>2022-04-22</lastmod>
+         <lastmod>2022-04-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fakenos.github.io/getting_started/</loc>
-         <lastmod>2022-04-22</lastmod>
+         <lastmod>2022-04-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fakenos.github.io/installation/</loc>
-         <lastmod>2022-04-22</lastmod>
+         <lastmod>2022-04-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fakenos.github.io/plugins_overview/</loc>
-         <lastmod>2022-04-22</lastmod>
+         <lastmod>2022-04-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fakenos.github.io/running_in_docker_md/</loc>
-         <lastmod>2022-04-22</lastmod>
+         <lastmod>2022-04-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
