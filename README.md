@@ -1,3 +1,11 @@
+⚠️⚠️⚠️
+
+# Fakenos moved to new home https://github.com/fakenos/fakenos, this repository deprecated 
+
+⚠️⚠️⚠️
+
+
+
 [![Downloads][pepy-downloads-badge]][pepy-downloads-link]
 [![PyPI][pypi-latest-release-badge]][pypi-latest-release-link]
 [![PyPI versions][pypi-pyversion-badge]][pypi-pyversion-link]
